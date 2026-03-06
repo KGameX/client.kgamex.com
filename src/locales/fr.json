@@ -1,0 +1,32 @@
+{
+    "nav": {
+        "texts": {
+            "activities": "Activités",
+            "videos": "Vidéos",
+            "mini-games": "Mini-Jeux",
+            "tools": "Outils",
+            "blog": "Blog",
+            "manage": "Gérer",
+            "log-in": "Se Connecter",
+            "account": "Mon Compte",
+            "language": "Français"
+        },
+        "titles": {
+            "dropdown": "Ouvrir / Fermer le panneau latéral",
+            "home": "Accueil",
+            "language": "Cliquez pour changer la langue"
+        }
+    },
+    "home": {
+        "main-subtitle": "Je joue à des jeux. Beaucoup de jeux."
+    },
+    "languageSelectWindow": {
+        "title": "Sélectionnez votre langue" 
+    },
+    "commonButtons": {
+        "close": "Fermer",
+        "confirm": "Confirmer",
+        "cancel": "Annuler"
+    },
+    "under-construction": "Salut ! La plupart du site est encore en construction. Venez jeter un œil plus tard !"
+}

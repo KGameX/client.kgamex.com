@@ -1,0 +1,10 @@
+.fade-exp-enter-active,
+.fade-exp-leave-active {
+    transition: all 0.3s ease-in-out;
+}
+
+.fade-exp-enter-from,
+.fade-exp-leave-to {
+    transform: translateY(-50px);
+    opacity: 0;
+}

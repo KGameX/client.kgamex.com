@@ -1,0 +1,41 @@
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-book.otf);
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-book-italic.otf);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-medium.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-medium-italic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: gotham;
+    src: url(/fonts/gotham-bold-italic.otf);
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Ubuntu Mono;
+    src: url(/fonts/ubuntu-mono.ttf);
+}

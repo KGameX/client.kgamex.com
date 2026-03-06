@@ -1,0 +1,100 @@
+body {
+    margin: 0 0 0 100px;
+    padding: 0;
+    font-family: gotham;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e6e6e6;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 2.5px solid #00000000;
+    background-clip: padding-box;
+    border-radius: 10px;
+    background-color: #b3b3b3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999999;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 70px;
+}
+
+h3 {
+    font-size: 60px;
+}
+
+h4 {
+    font-size: 50px;
+}
+
+h5 {
+    font-size: 40px;
+}
+
+h6 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+section {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: justify;
+}
+
+span.button {
+    color: black;
+    display: inline-block;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+span.button:hover {
+    background-color: #999999;
+    color: white;
+}
+
+.sample {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 10px auto;
+}

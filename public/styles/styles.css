@@ -1,0 +1,11 @@
+.home-main {
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 660px;
+    box-sizing: border-box;
+    background-image: url(/images/kgamex-hello.svg), url(/images/main-gradient.jpg);
+    background-size: 290px auto, 100% 100%;
+    background-position: bottom -10px right 15%, center;
+    background-repeat: no-repeat;
+}

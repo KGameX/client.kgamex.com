@@ -1,0 +1,17 @@
+input[type="radio"] {
+    display: none;
+}
+
+input:checked + label span.button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.radio {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px;
+}

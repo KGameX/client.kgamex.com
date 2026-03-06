@@ -1,0 +1,32 @@
+{
+    "nav": {
+        "texts": {
+            "activities": "Activities",
+            "videos": "Videos",
+            "mini-games": "Mini-Games",
+            "tools": "Tools",
+            "blog": "Blog",
+            "manage": "Manage",
+            "log-in": "Log In",
+            "account": "My Account",
+            "language": "English"
+        },
+        "titles": {
+            "dropdown": "Open / Close the side panel",
+            "home": "Home",
+            "language": "Click to change language"
+        }
+    },
+    "home": {
+        "main-subtitle": "I play games. Lots of games."
+    },
+    "languageSelectWindow": {
+        "title": "Select your language" 
+    },
+    "commonButtons": {
+        "close": "Close",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+    },
+    "under-construction": "Hi! Most of the website is still under construction. Come and check out later !"
+}
