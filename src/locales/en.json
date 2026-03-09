@@ -20,10 +20,15 @@
     "home": {
         "main-subtitle": "I play games. Lots of games."
     },
+    "404": {
+        "title": "Getting lost ?",
+        "subtitle-1": "Don't worry, this happens to me every time.",
+        "subtitle-2": "Check out the home page and find your way back !"
+    },
     "languageSelectWindow": {
         "title": "Select your language" 
     },
-    "commonButtons": {
+    "buttons": {
         "close": "Close",
         "confirm": "Confirm",
         "cancel": "Cancel"

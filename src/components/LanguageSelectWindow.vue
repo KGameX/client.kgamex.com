@@ -8,7 +8,7 @@
                     <label :for="langCode"><span class="button">{{ langName }}</span></label>
                 </div>
             </div>
-            <p><span id="close" class="button">{{ t("commonButtons.close") }}</span></p>
+            <p><span id="close" class="button">{{ t("buttons.close") }}</span></p>
         </section>
         
         <div class="language-select-cover-box"></div>

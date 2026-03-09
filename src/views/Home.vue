@@ -1,5 +1,5 @@
 <template>
-    <section class="home-main">
+    <section class="main-home">
         <div>
             <h1>Live it,<br>for Real.</h1>
             <p>{{ t("home.main-subtitle") }}</p>

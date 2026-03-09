@@ -20,10 +20,15 @@
     "home": {
         "main-subtitle": "Je joue à des jeux. Beaucoup de jeux."
     },
+    "404": {
+        "title": "Vous vous êtes perdu ?",
+        "subtitle-1": "Pas de panique, ça m'arrive à chaque fois.",
+        "subtitle-2": "Consultez la page d'accueil et retrouvez votre chemin !"
+    },
     "languageSelectWindow": {
         "title": "Sélectionnez votre langue" 
     },
-    "commonButtons": {
+    "buttons": {
         "close": "Fermer",
         "confirm": "Confirmer",
         "cancel": "Annuler"

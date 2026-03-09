@@ -1,4 +1,4 @@
-.home-main {
+.main-home {
     color: white;
     display: flex;
     align-items: center;
@@ -6,6 +6,18 @@
     box-sizing: border-box;
     background-image: url(/images/kgamex-hello.svg), url(/images/main-gradient.jpg);
     background-size: 290px auto, 100% 100%;
+    background-position: bottom -10px right 15%, center;
+    background-repeat: no-repeat;
+}
+
+.main-404{
+    color: white;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 20px);
+    box-sizing: border-box;
+    background-image: url(/images/kgamex-lost.svg), url(/images/main-gradient-404.jpg);
+    background-size: auto 85%, 100% 100%;
     background-position: bottom -10px right 15%, center;
     background-repeat: no-repeat;
 }
