@@ -7,8 +7,7 @@ const routes = [
         component: () => import('@/views/Home.vue')
     },
     {
-        path: '/404',
-        alias: '/:pathMatch(.*)*',
+        path: '/:pathMatch(.*)*',
         name: 'NotFound',
         component: () => import('@/views/NotFound.vue')
     }
