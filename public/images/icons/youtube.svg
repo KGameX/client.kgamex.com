@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (1:1.4+202410161351+e7c3feb100)"
+   sodipodi:docname="Youtube.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="3.0383495"
+     inkscape:cx="74.053364"
+     inkscape:cy="14.810673"
+     inkscape:window-width="1253"
+     inkscape:window-height="758"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1412"
+       clip-path="none"
+       style="stroke-width:0.0208149;fill:#ffffff;fill-opacity:1"
+       d="M 114.84548 137.39617 C 114.84548 137.39617 76.819769 137.39862 67.409235 139.95759 C 62.171703 141.34194 58.083637 145.36738 56.593278 150.56921 C 54.080961 159.79827 54.079375 179.26286 54.079375 179.26286 C 54.079375 179.26286 54.080961 198.85739 56.593278 208.17035 C 58.083637 213.24633 62.171703 217.35566 67.409235 218.78197 C 76.819769 221.29899 114.84548 221.30062 114.84548 221.30062 C 114.84548 221.30062 152.9522 221.29899 162.40527 218.78197 C 167.72792 217.35566 171.73077 213.24633 173.13569 208.17035 C 175.73325 198.85739 175.73513 179.26286 175.73513 179.26286 C 175.73513 179.26286 175.73325 159.79827 173.13569 150.56921 C 171.73077 145.36738 167.72792 141.34194 162.40527 139.95759 C 152.9522 137.39862 114.84548 137.39617 114.84548 137.39617 z M 102.32349 161.51822 L 133.7829 179.3484 L 102.32349 197.17857 L 102.32349 161.51822 z "
+       transform="matrix(0.41099576,0,0,0.41099576,-22.226394,-48.71143)" />
+  </g>
+</svg>
