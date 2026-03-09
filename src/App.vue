@@ -124,6 +124,23 @@
     </transition>
 
     <router-view />
+
+    <div class="footer">
+        <div>
+            <p>{{ year }} KGΛMΞX - Live it, for Real.</p>
+        </div>
+    
+        <div>
+            <ul>
+                <li><a href="https://discord.com/invite/uDsPdw7A5r" target="_blank"><img src="/images/icons/discord.svg" height="30" id="icon"></a></li>
+                <li><a href="https://youtube.com/@kgamex_vk" target="_blank"><img src="/images/icons/youtube.svg" height="30" id="icon"></a></li>
+                <li><a href="https://github.com/KGameX/client.kgamex.com" target="_blank"><img src="/images/icons/github.svg" height="30" id="icon"></a></li>
+                <li><a href="https://facebook.com/KGameX.VK" target="_blank"><img src="/images/icons/facebook.svg" height="30" id="icon"></a></li>
+                <li><a href="https://instagram.com/KGameX.VK" target="_blank"><img src="/images/icons/instagram.svg" height="30" id="icon"></a></li>
+                <li><a href="https://x.com/KGameX_VK" target="_blank"><img src="/images/icons/x.svg" height="30" id="icon"></a></li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -133,6 +150,7 @@ import { useI18n } from 'vue-i18n'
 import LanguageSelectWindow from './components/LanguageSelectWindow.vue'
 
 const { t } = useI18n()
+const year = new Date().getFullYear()
 
 let languageSelectWindowVisible = ref(false)
 
