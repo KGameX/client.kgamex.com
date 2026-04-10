@@ -1,8 +1,11 @@
 <template>
+    <title>{{ t('404.tab-title') }} | KGΛMΞX</title>
+
     <section class="main-404">
         <div>
-            <h1>{{ t("404.title") }}</h1>
-            <p>{{ t("404.subtitle-1") }}<br>{{ t("404.subtitle-2") }}</p>
+            <p>404 - {{ t('404.topper') }}</p>
+            <h1>{{ t('404.title') }}</h1>
+            <p v-html="t('404.subtitle')"></p>
         </div>
     </section>
 </template>
