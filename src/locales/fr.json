@@ -12,30 +12,68 @@
             "account": "Mon Compte",
             "language": "Français"
         },
+
         "titles": {
             "dropdown": "Ouvrir / Fermer le panneau latéral",
             "home": "Accueil",
             "language": "Cliquez pour changer la langue"
         }
     },
+
     "home": {
         "main-subtitle": "Je joue à des jeux. Beaucoup de jeux.",
         "presentation": "<h5>Salut, je m'appelle KGΛMΞX.</h5><p>Je suis étudiant en informatique.</p><p>Quand je parle en ligne, j'incarne un stickman à l'origine nommé Blue.</p><p>Je joue à beaucoup de jeux vidéo, notamment Beat Saber, sur lequel je suis classé dans le top 1.9% mondial.</p><p>Quand je n'ai pas mon casque VR, je joue à d'autres jeux comme Geometry Dash, Minecraft et Mario Kart.</p>",
         "tools-presentation": "<p>Au cours de mes projets universitaires et personnels, j'ai appris à utiliser divers outils pour différentes finalités.</p><p>Certains d'entre eux incluent :<ul><li>Visual Studio Code et IntelliJ IDEA pour la programmation ;</li><li>Inkscape pour le design graphique ;</li><li>Shotcut pour le montage vidéo ;</li><li>Unity pour le développement de jeux.</li></ul></p>"
     },
+
+    "questions": {
+        "title": "Toutes les questions",
+        "ask": "Poser une question",
+        "no-questions": "Il n'y a pas encore de questions. Soyez le premier à en poser une !",
+        "asked": "Question posée par {username} le {date}",
+        "anonymous": "un utilisateur anonyme",
+        "status": {
+            "answered": "Répondue",
+            "unanswered": "Pas de réponse"
+        }
+    },
+
+    "question": {
+        "asked": "{username} a posé la question le {date} :",
+        "anonymous": "Un utilisateur anonyme",
+        "status": {
+            "answered": "KGΛMΞX a répondu le {date} :",
+            "unanswered": "Cette question n'a pas encore été répondue."
+        },
+        "not-found": "Oups ! Cette question n'existe pas. Si vous avez entré l'URL manuellement, vérifiez qu'elle est correcte !"
+    },
+
+    "ask-question": {
+        "title": "Poser une question",
+        "form": {
+            "placeholder": "Qu'est-ce que vous voulez me demander ?"
+        }
+    },
+
     "404": {
         "tab-title": "404 - Page non trouvée",
         "topper": "On dirait que cette page n'existe pas !",
         "title": "Vous vous êtes perdu ?",
         "subtitle": "Pas de panique, ça m'arrive à chaque fois.<br>Consultez la page d'accueil et retrouvez votre chemin !"
     },
+
     "languageSelectWindow": {
         "title": "Sélectionnez votre langue" 
     },
+
     "buttons": {
         "close": "Fermer",
         "confirm": "Confirmer",
+        "submit": "Valider",
         "cancel": "Annuler"
     },
-    "under-construction": "Salut ! La plupart du site est encore en construction. Venez jeter un œil plus tard !"
+
+    "messages": {
+        "loading": "Chargement..."
+    }
 }

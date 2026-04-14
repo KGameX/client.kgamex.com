@@ -10,6 +10,18 @@
             </div>
         </a>
 
+        <a href="/questions" :title="t('nav.texts.questions')">
+            <div class="submenu">
+                <div class="icon">
+                    <img src="/images/icons/questions.svg" width="40" height="40">
+                </div>
+
+                <div class="text">
+                    <p>{{ t('nav.texts.questions') }}</p>
+                </div>
+            </div>
+        </a>
+
         <div v-if="false">
             <a href="/activities" :title="t('nav.texts.activities')">
                 <div class="submenu">
@@ -43,18 +55,6 @@
 
                     <div class="text">
                         <p>{{ t('nav.texts.blog') }}</p>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/questions" :title="t('nav.texts.questions')">
-                <div class="submenu">
-                    <div class="icon">
-                        <img src="/images/icons/questions.svg" width="40" height="40">
-                    </div>
-
-                    <div class="text">
-                        <p>{{ t('nav.texts.questions') }}</p>
                     </div>
                 </div>
             </a>
@@ -160,10 +160,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 import LanguageSelectWindow from './components/LanguageSelectWindow.vue'
 
-const { t } = useI18n()
 const year = new Date().getFullYear()
 
 let languageSelectWindowVisible = ref(false)

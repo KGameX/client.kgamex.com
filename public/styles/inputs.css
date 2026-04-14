@@ -15,3 +15,68 @@ input:checked + label span.button {
     gap: 10px;
     padding: 5px;
 }
+
+.textbox {
+    background-color: #f2f2f2;
+    font-family: Ubuntu Mono;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.no-padding .textbox {
+    background-color: #e6e6e6;
+}
+
+.textbox:focus {
+    outline: none;
+}
+
+button {
+    font-family: Gotham;
+    border: none;
+    color: black;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #999999;
+    color: white;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    color: #757575;
+}
+
+button:disabled:hover {
+    background-color: #f2f2f2;
+    color: #757575;
+}
+
+.no-padding button {
+    background-color: white;
+}
+
+.no-padding button:hover {
+    background-color: #999999;
+    color: white;
+}
+
+.no-padding button:disabled:hover {
+    background-color: white;
+    color: #757575;
+}
+
+button:focus {
+    outline: none;
+}

@@ -34,3 +34,6 @@ coverage
 
 # Vitest
 __screenshots__/
+
+# API URL
+src/stores/api_url.js

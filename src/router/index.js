@@ -6,6 +6,25 @@ const routes = [
         name: 'Home',
         component: () => import('@/views/Home.vue')
     },
+
+    {
+        path: '/questions',
+        name: 'Questions',
+        component: () => import('@/views/Questions.vue')
+    },
+
+    {
+        path: '/questions/ask',
+        name: 'AskQuestion',
+        component: () => import('@/views/AskQuestion.vue')
+    },
+
+    {
+        path: '/questions/:id',
+        name: 'Question',
+        component: () => import('@/views/Question.vue')
+    },
+
     {
         path: '/:pathMatch(.*)*',
         name: 'NotFound',
