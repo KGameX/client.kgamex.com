@@ -1,3 +1,3 @@
-const apiUrl = "https://api.kgamex.com"
+const apiUrl = "http://api.kgamex.com"
 
 export default apiUrl
