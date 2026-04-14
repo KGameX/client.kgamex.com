@@ -1,4 +1,6 @@
 <template>
+    <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
+
     <div class="tab">
         <section class="sample">
             <h3>{{ t('questions.title') }}</h3>

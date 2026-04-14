@@ -1,4 +1,6 @@
 <template>
+    <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
+    
     <div class="tab" v-if="question && !loading">
         <section>
             <p>{{ t('question.asked', {username: user?.display_name || t('question.anonymous'), date: new Date(question.created_at).toLocaleDateString()}) }}</p>

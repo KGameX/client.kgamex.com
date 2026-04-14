@@ -27,6 +27,7 @@
     },
 
     "questions": {
+        "tab-title": "Questions",
         "title": "All questions",
         "ask": "Ask a question",
         "no-questions": "There are no questions yet. Be the first to ask one !",
@@ -49,6 +50,7 @@
     },
 
     "ask-question": {
+        "tab-title": "Ask a question",
         "title": "Ask a question",
         "form": {
             "placeholder": "What do you want to ask me ?"
