@@ -7,9 +7,13 @@
         </section>
 
         <section id="textbox-question" class="no-padding">
-            <textarea name="question" v-model="questionBody" :placeholder="t('ask-question.form.placeholder')" rows="20" class="textbox no-parent" maxlength="2000"></textarea>
+            <textarea name="question" v-model="questionBody" :placeholder="t('ask-question.form.placeholder')" rows="10" class="textbox no-parent" maxlength="500"></textarea>
         </section>
         
+        <section class="small-block">
+            <p>{{ questionBody.length }} / 500</p>
+        </section>
+
         <section class="no-padding">
             <button class="button" :disabled="questionBody.length == 0 || submitted" @click="questionStore.createQuestion({ body: questionBody }); submitted=true">{{ t('buttons.submit') }}</button>
         </section>

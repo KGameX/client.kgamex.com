@@ -96,6 +96,10 @@ section {
     background: none;
 }
 
+.small-block {
+    width: fit-content;
+}
+
 span.button, span.block {
     color: black;
     display: inline-block;
