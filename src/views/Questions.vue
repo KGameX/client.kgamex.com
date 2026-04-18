@@ -16,13 +16,13 @@
             <a v-for="question in questionStore.questions" :key="question.id" :href="`/questions/${question.id}`" class="question-card">
                 <div>
                     <h6>{{ question.body }}</h6>
-                    <p>{{ t('questions.asked', { username: userStore.users.find(u => u.id === question.user_id)?.display_name || t('questions.anonymous'), date: new Date(question.created_at).toLocaleDateString() }) }}</p>
+                    <p>{{ t('questions.asked', { username: question.user?.display_name || t('questions.anonymous'), date: new Date(question.created_at).toLocaleDateString() }) }}</p>
                 </div>
                 
                 <div>
                     <p>
-                        <span class="block" :class="{ 'answered': answerStore.answers.find(answer => answer.question_id === question.id) }">
-                            {{ answerStore.answers.find(answer => answer.question_id === question.id) ? t('questions.status.answered') : t('questions.status.unanswered') }}
+                        <span class="block" :class="{ 'answered': question.answer }">
+                            {{ question.answer ? t('questions.status.answered') : t('questions.status.unanswered') }}
                         </span>
                     </p>
                 </div>
@@ -43,15 +43,7 @@
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-import useUserStore from '@/stores/user'
 import useQuestionStore from '@/stores/question'
-import useAnswerStore from '@/stores/answer'
-
-const userStore = useUserStore()
 const questionStore = useQuestionStore()
-const answerStore = useAnswerStore()
-
-userStore.fetchUsers()
 questionStore.fetchQuestions()
-answerStore.fetchAnswers()
 </script>

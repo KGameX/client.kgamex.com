@@ -7,7 +7,6 @@ const useQuestionStore = defineStore('question', () => {
     const questions = ref([])
     const loading = ref(true)
     const question = ref(null)
-    const notFound = ref(false)
 
     async function fetchQuestions() {
         try {
@@ -27,10 +26,8 @@ const useQuestionStore = defineStore('question', () => {
 
             if (response.ok) {
                 question.value = await response.json()
-                notFound.value = false
             } else if (response.status === 404) {
                 question.value = null
-                notFound.value = true
             }
 
             loading.value = false
@@ -53,7 +50,7 @@ const useQuestionStore = defineStore('question', () => {
         }
     }
 
-    return { questions, loading, question, notFound, fetchQuestions, fetchQuestionById, createQuestion }
+    return { questions, loading, question, fetchQuestions, fetchQuestionById, createQuestion }
 })
 
 export default useQuestionStore
