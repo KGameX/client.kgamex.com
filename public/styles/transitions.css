@@ -1,10 +1,10 @@
-.fade-exp-enter-active,
-.fade-exp-leave-active {
+.lsw-fade-enter-active,
+.lsw-fade-leave-active {
     transition: all 0.3s ease-in-out;
 }
 
-.fade-exp-enter-from,
-.fade-exp-leave-to {
+.lsw-fade-enter-from,
+.lsw-fade-leave-to {
     transform: translateY(-50px);
     opacity: 0;
 }
@@ -25,4 +25,14 @@
 
 .image-fade-leave-to {
     transform: translateX(-25%);
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+    transition: opacity 0.25s ease-in-out;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+    opacity: 0;
 }

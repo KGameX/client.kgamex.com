@@ -1,6 +1,4 @@
 <template>
-    <title>{{ t('ask-question.tab-title') }} | KGΛMΞX</title>
-
     <div class="tab">
         <section class="sample">
             <h3>{{ t('ask-question.title') }}</h3>
@@ -23,12 +21,13 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import useQuestionStore from '@/stores/question'
 
 const { t } = useI18n()
 
-import useQuestionStore from '@/stores/question'
-const questionStore = useQuestionStore()
+document.title = t('ask-question.tab-title') + ' | KGΛMΞX'
 
+const questionStore = useQuestionStore()
 const questionBody = ref('')
 const submitted = ref(false)
 </script>

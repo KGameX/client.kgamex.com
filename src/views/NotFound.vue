@@ -1,6 +1,4 @@
 <template>
-    <title>{{ t('404.tab-title') }} | KGΛMΞX</title>
-
     <section class="main-404">
         <div>
             <p>404 - {{ t('404.topper') }}</p>
@@ -13,4 +11,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+
+document.title = t('404.tab-title') + ' | KGΛMΞX'
 </script>

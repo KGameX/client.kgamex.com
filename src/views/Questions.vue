@@ -1,19 +1,17 @@
 <template>
-    <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
-
     <div class="tab">
         <section class="sample">
             <h3>{{ t('questions.title') }}</h3>
         </section>
 
         <section class="sample no-padding">
-            <a href="/questions/ask">
+            <router-link to="/questions/ask">
                 <span class="button">{{ t('questions.ask') }}</span>
-            </a>
+            </router-link>
         </section>
 
         <section class="question-list" v-if="questionStore.questions.length > 0 && !questionStore.loading">
-            <a v-for="question in questionStore.questions" :key="question.id" :href="`/questions/${question.id}`" class="question-card">
+            <router-link v-for="question in questionStore.questions" :key="question.id" :to="`/questions/${question.id}`" class="question-card">
                 <div>
                     <h6>{{ question.body }}</h6>
                     <p>{{ t('questions.asked', { username: question.user?.display_name || t('questions.anonymous'), date: new Date(question.created_at).toLocaleDateString() }) }}</p>
@@ -26,7 +24,7 @@
                         </span>
                     </p>
                 </div>
-            </a>
+            </router-link>
         </section>
 
         <section v-else-if="questionStore.loading">
@@ -41,9 +39,11 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import useQuestionStore from '@/stores/question'
 const { t } = useI18n()
 
-import useQuestionStore from '@/stores/question'
+document.title = t('questions.tab-title') + ' | KGΛMΞX'
+
 const questionStore = useQuestionStore()
 questionStore.fetchQuestions()
 </script>
