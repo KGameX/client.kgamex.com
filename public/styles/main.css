@@ -28,6 +28,7 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 5px 10px;
+    word-break: break-word;
 }
 
 h1 {
@@ -106,6 +107,7 @@ span.button, span.block {
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     user-select: none;
+    word-break: keep-all;
 }
 
 .no-padding span.button, .no-padding span.block {
