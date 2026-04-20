@@ -80,7 +80,8 @@
         "tab-title": "Poser une question",
         "title": "Poser une question",
         "form": {
-            "placeholder": "Qu'est-ce que vous voulez me demander ?"
+            "placeholder": "Qu'est-ce que vous voulez me demander ?",
+            "anonymous": "Poser anonymement"
         }
     },
 
