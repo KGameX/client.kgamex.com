@@ -29,6 +29,14 @@ const useUserStore = defineStore('user', () => {
         }
     }
 
+    async function redirectIfAuthenticated() {
+        await checkAuth()
+        
+        if (user.value) {
+            router.push('/')
+        }
+    }
+
     async function login(data) {
         loginError.value = false
 
@@ -108,7 +116,7 @@ const useUserStore = defineStore('user', () => {
         }
     }
 
-    return { user, loginError, signupError, usernameExistsError, emailExistsError, checkAuth, login, signup }
+    return { user, loginError, signupError, usernameExistsError, emailExistsError, checkAuth, redirectIfAuthenticated, login, signup }
 })
 
 export default useUserStore

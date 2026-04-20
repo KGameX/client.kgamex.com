@@ -46,9 +46,7 @@ import useUserStore from '@/stores/user'
 const { t } = useI18n()
 const userStore = useUserStore()
 
-if (userStore.user) {
-    window.location.href = '/'
-}
+userStore.redirectIfAuthenticated()
 
 const username = ref('')
 const email = ref('')
