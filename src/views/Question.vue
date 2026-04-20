@@ -1,5 +1,7 @@
 <template>
     <div>
+        <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
+
         <div class="tab" v-if="questionStore.question && !questionStore.loading">
             <section>
                 <p>{{ t('question.asked', { username: questionStore.question.user?.display_name || t('question.anonymous'), date: new Date(questionStore.question.created_at).toLocaleDateString()}) }}</p>
@@ -39,9 +41,7 @@ import useQuestionStore from '@/stores/question'
 
 const { t } = useI18n()
 const route = useRoute()
-
-document.title = t('questions.tab-title') + ' | KGΛMΞX'
-
 const questionStore = useQuestionStore()
+
 questionStore.fetchQuestionById(route.params.id)
 </script>

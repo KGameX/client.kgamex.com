@@ -1,5 +1,7 @@
 <template>
     <div>
+        <title>KGΛMΞX - Live it, for Real.</title>
+
         <section class="main-home">
             <div>
                 <h1>Live it,<br>for Real.</h1>
@@ -31,8 +33,6 @@
 import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
-
-document.title = 'KGΛMΞX - Live it, for Real.'
 
 const poses = [
     '/images/kgamex-poses/beat-saber.svg',

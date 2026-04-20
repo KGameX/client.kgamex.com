@@ -26,6 +26,33 @@
         "tools-presentation": "<p>Au cours de mes projets universitaires et personnels, j'ai appris à utiliser divers outils pour différentes finalités.</p><p>Certains d'entre eux incluent :<ul><li>Visual Studio Code et IntelliJ IDEA pour la programmation ;</li><li>Inkscape pour le design graphique ;</li><li>Shotcut pour le montage vidéo ;</li><li>Unity pour le développement de jeux.</li></ul></p>"
     },
 
+    "auth": {
+        "title": "Bienvenue",
+        "login": {
+            "login": "Nom d'utilisateur ou email",
+            "password": "Mot de passe",
+            "button": "Se connecter",
+            "error": "L'identifiant ou le mot de passe sont incorrects.",
+            "no-account": "Vous n'avez pas de compte ?"
+        },
+        "signup": {
+            "username": "Nom d'utilisateur",
+            "email": "Email",
+            "display-name": "Nom d'affichage",
+            "password": "Mot de passe",
+            "confirm-password": "Confirmer le mot de passe",
+            "button": "S'inscrire",
+            "error": {
+                "default": "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+                "usernameExists": "Ce nom d'utilisateur est déjà pris.",
+                "emailExists": "Cet email est déjà enregistré."
+            },
+            "hint": {
+                "username": "Ne peut contenir que des lettres, des chiffres et des underscores, et doit être compris entre 5 et 20 caractères."
+            }
+        }
+    },
+
     "questions": {
         "tab-title": "Questions",
         "title": "Toutes les questions",

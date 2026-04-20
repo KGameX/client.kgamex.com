@@ -26,6 +26,33 @@
         "tools-presentation": "<p>Throughout university and personal projects, I learned various tools for multiple purposes.</p><p>Some of them include :<ul><li>Visual Studio Code and IntelliJ IDEA for programming ;</li><li>Inkscape for graphic design ;</li><li>Shotcut for video editing ;</li><li>Unity for game development.</li></ul></p>"
     },
 
+    "auth": {
+        "title": "Welcome",
+        "login": {
+            "login": "Username or email",
+            "password": "Password",
+            "button": "Log in",
+            "error": "Login or password is incorrect.",
+            "no-account": "Don't have an account ?"
+        },
+        "signup": {
+            "username": "Username",
+            "email": "Email",
+            "display-name": "Display name",
+            "password": "Password",
+            "confirm-password": "Confirm password",
+            "button": "Sign up",
+            "error": {
+                "default": "An error occurred during registration. Please try again.",
+                "usernameExists": "This username is already taken.",
+                "emailExists": "This email is already registered."
+            },
+            "hint": {
+                "username": "Can only contain letters, numbers and underscores, and must be between 5 and 20 characters long."
+            }
+        }
+    },
+
     "questions": {
         "tab-title": "Questions",
         "title": "All questions",
@@ -53,7 +80,8 @@
         "tab-title": "Ask a question",
         "title": "Ask a question",
         "form": {
-            "placeholder": "What do you want to ask me ?"
+            "placeholder": "What do you want to ask me ?",
+            "anonymous": "Ask anonymously"
         }
     },
 

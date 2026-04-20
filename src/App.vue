@@ -22,6 +22,30 @@
             </div>
         </router-link>
 
+        <!--router-link to="/account" :title="t('nav.texts.account')" v-if="userStore.user"-->
+            <div class="submenu" v-if="userStore.user">
+                <div class="icon">
+                    <img src="/images/icons/account.svg" width="40" height="40">
+                </div>
+
+                <div class="text">
+                    <p>{{ userStore.user.display_name }}</p>
+                </div>
+            </div>
+        <!--/router-link-->
+
+        <router-link to="/log-in" :title="t('nav.texts.log-in')" v-else>
+            <div class="submenu">
+                <div class="icon">
+                    <img src="/images/icons/log-in.svg" width="40" height="40">
+                </div>
+
+                <div class="text">
+                    <p>{{ t('nav.texts.log-in') }}</p>
+                </div>
+            </div>
+        </router-link>
+
         <div v-if="false">
             <router-link to="/activities" :title="t('nav.texts.activities')">
                 <div class="submenu">
@@ -94,30 +118,6 @@
                     </div>
                 </div>
             </router-link>
-
-            <router-link to="/account" :title="t('nav.texts.account')">
-                <div class="submenu">
-                    <div class="icon">
-                        <img src="/images/icons/account.svg" width="40" height="40">
-                    </div>
-
-                    <div class="text">
-                        <p>{{ t('nav.texts.account') }}</p>
-                    </div>
-                </div>
-            </router-link>
-
-            <router-link to="/log-in" :title="t('nav.texts.log-in')">
-                <div class="submenu">
-                    <div class="icon">
-                        <img src="/images/icons/log-in.svg" width="40" height="40">
-                    </div>
-
-                    <div class="text">
-                        <p>{{ t('nav.texts.log-in') }}</p>
-                    </div>
-                </div>
-            </router-link>
         </div>
 
         <div id="change-language-button" class="submenu bottom" :title="t('nav.titles.language')">
@@ -135,9 +135,11 @@
         <LanguageSelectWindow v-if="languageSelectWindowVisible" @close-language-select-window="languageSelectWindowVisible = false"/>
     </transition>
 
-    <Transition name="page-fade" mode="out-in">
-        <router-view :key="$route.path" />
-    </Transition>
+    <router-view v-slot="{ Component }">
+        <Transition name="page-fade" mode="out-in">
+            <component :is="Component" />
+        </Transition>
+    </router-view>
 
     <div class="cover-box hidden"></div>
 
@@ -162,13 +164,15 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import LanguageSelectWindow from './components/LanguageSelectWindow.vue'
+import useUserStore from '@/stores/user'
 
+const { t } = useI18n()
 const year = new Date().getFullYear()
+const languageSelectWindowVisible = ref(false)
+const userStore = useUserStore()
 
-let languageSelectWindowVisible = ref(false)
+userStore.checkAuth()
 
 onMounted(() => {
     const navbar = document.getElementsByClassName('navbar')[0]

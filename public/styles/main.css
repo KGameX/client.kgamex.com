@@ -74,6 +74,18 @@ li {
     list-style-type: "- ";
 }
 
+.danger {
+    color: #d90000;
+}
+
+.warning {
+    color: #e6d300;
+}
+
+.success {
+    color: #007f00;
+}
+
 section {
     background-color: white;
     margin: 10px;
@@ -94,6 +106,11 @@ section {
 .no-padding {
     padding: 0;
     background: none;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
 }
 
 .small-block {
@@ -121,6 +138,13 @@ span.button, span.block {
 span.button:hover {
     background-color: #999999;
     color: white;
+}
+
+.center-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tab {
