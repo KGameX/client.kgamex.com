@@ -22,8 +22,8 @@
             </div>
         </router-link>
 
-        <!--router-link to="/account" :title="t('nav.texts.account')" v-if="userStore.user"-->
-            <div class="submenu" v-if="userStore.user">
+        <router-link to="/logout" :title="t('nav.texts.account')" v-if="userStore.user">
+            <div class="submenu">
                 <div class="icon">
                     <img src="/images/icons/account.svg" width="40" height="40">
                 </div>
@@ -32,9 +32,9 @@
                     <p>{{ userStore.user.display_name }}</p>
                 </div>
             </div>
-        <!--/router-link-->
+        </router-link>
 
-        <router-link to="/log-in" :title="t('nav.texts.log-in')" v-else>
+        <router-link to="/login" :title="t('nav.texts.log-in')" v-else>
             <div class="submenu">
                 <div class="icon">
                     <img src="/images/icons/log-in.svg" width="40" height="40">
@@ -172,7 +172,7 @@ const year = new Date().getFullYear()
 const languageSelectWindowVisible = ref(false)
 const userStore = useUserStore()
 
-userStore.checkAuth()
+userStore.renewAuth()
 
 onMounted(() => {
     const navbar = document.getElementsByClassName('navbar')[0]

@@ -29,11 +29,35 @@ const useUserStore = defineStore('user', () => {
         }
     }
 
+    async function renewAuth() {
+        try {
+            const response = await fetch(`${apiUrl}/auth/renew`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include'
+            })
+
+            if (response.ok) {
+                user.value = await response.json()
+            }
+        } catch (error) {
+            console.error('Failed to renew auth : ', error)
+        }
+    }
+
     async function redirectIfAuthenticated() {
-        await checkAuth()
-        
         if (user.value) {
             router.push('/')
+        }
+    }
+
+    async function checkRole(roleId, failPath) {
+        if (!user.value) {
+            router.push(failPath)
+            return
+        } else if (user.value.role_id < roleId) {
+            router.push(failPath)
+            return
         }
     }
 
@@ -80,10 +104,12 @@ const useUserStore = defineStore('user', () => {
                 usernameExists.value = true
             }
 
-            response = await fetch(`${apiUrl}/user/email/${data.email}`)
+            if (data.email) {
+                response = await fetch(`${apiUrl}/user/email/${data.email}`)
 
-            if (response.ok) {
-                emailExists.value = true
+                if (response.ok) {
+                    emailExists.value = true
+                }
             }
 
             if (usernameExists.value || emailExists.value) {
@@ -116,7 +142,21 @@ const useUserStore = defineStore('user', () => {
         }
     }
 
-    return { user, loginError, signupError, usernameExistsError, emailExistsError, checkAuth, redirectIfAuthenticated, login, signup }
+    async function logout() {
+        try {
+            await fetch(`${apiUrl}/auth/logout`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include'
+            })
+            user.value = null
+            router.push('/')
+        } catch (error) {
+            console.error('Failed to logout : ', error)
+        }
+    }
+
+    return { user, loginError, signupError, usernameExistsError, emailExistsError, checkAuth, renewAuth, redirectIfAuthenticated, checkRole, login, signup, logout }
 })
 
 export default useUserStore

@@ -37,7 +37,7 @@
         },
         "signup": {
             "username": "Username",
-            "email": "Email",
+            "email": "Email (Optional)",
             "display-name": "Display name",
             "password": "Password",
             "confirm-password": "Confirm password",
@@ -57,6 +57,7 @@
         "tab-title": "Questions",
         "title": "All questions",
         "ask": "Ask a question",
+        "reply": "Reply",
         "no-questions": "There are no questions yet. Be the first to ask one !",
         "asked": "Asked by {username} on {date}",
         "anonymous": "an anonymous user",
@@ -85,6 +86,13 @@
         }
     },
 
+    "reply-question": {
+        "tab-title": "Reply to question",
+        "form": {
+            "placeholder": "What is your answer to this question ?"
+        }
+    },
+
     "404": {
         "tab-title": "404 - Page not found",
         "topper": "Looks like this page doesn't exist !",
@@ -104,6 +112,7 @@
     },
 
     "messages": {
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "logout": "Logging out..."
     }
 }

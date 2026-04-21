@@ -6,6 +6,7 @@ import router from '@/router'
 const useAnswerStore = defineStore('answer', () => {
     const answers = ref([])
     const answer = ref(null)
+    const submitError = ref(false)
 
     async function fetchAnswers() {
         try {
@@ -28,20 +29,29 @@ const useAnswerStore = defineStore('answer', () => {
     }
 
     async function createAnswer(data) {
+        submitError.value = false
+
         try {
             const response = await fetch(`${apiUrl}/answer`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
                 body: JSON.stringify(data)
             })
-            const result = await response.json()
-            router.push(`/questions/${result.question_id}`)
+            
+            if (response.ok) {
+                const result = await response.json()
+                console.log(result)
+                router.push(`/questions/${result.id}`)
+            } else {
+                submitError.value = true
+            }
         } catch (error) {
             console.error('Failed to create answer : ', error)
         }
     }
 
-    return { answers, answer, fetchAnswers, fetchAnswerByQuestionId, createAnswer }
+    return { answers, answer, submitError, fetchAnswers, fetchAnswerByQuestionId, createAnswer }
 })
 
 export default useAnswerStore

@@ -37,7 +37,7 @@
         },
         "signup": {
             "username": "Nom d'utilisateur",
-            "email": "Email",
+            "email": "Email (Optionnel)",
             "display-name": "Nom d'affichage",
             "password": "Mot de passe",
             "confirm-password": "Confirmer le mot de passe",
@@ -57,6 +57,7 @@
         "tab-title": "Questions",
         "title": "Toutes les questions",
         "ask": "Poser une question",
+        "reply": "Répondre",
         "no-questions": "Il n'y a pas encore de questions. Soyez le premier à en poser une !",
         "asked": "Question posée par {username} le {date}",
         "anonymous": "un utilisateur anonyme",
@@ -85,6 +86,13 @@
         }
     },
 
+    "reply-question": {
+        "tab-title": "Répondre à une question",
+        "form": {
+            "placeholder": "Quelle est votre réponse à cette question ?"
+        }
+    },
+
     "404": {
         "tab-title": "404 - Page non trouvée",
         "topper": "On dirait que cette page n'existe pas !",
@@ -104,6 +112,7 @@
     },
 
     "messages": {
-        "loading": "Chargement..."
+        "loading": "Chargement...",
+        "logout": "Déconnexion en cours..."
     }
 }

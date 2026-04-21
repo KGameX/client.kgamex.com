@@ -13,7 +13,7 @@
                 <p class="danger" v-if="userStore.usernameExistsError">{{ t('auth.signup.error.usernameExists') }}</p>
 
                 <div>
-                    <input v-model="email" id="email-textbox" name="email-textbox" class="textbox" type="email" :placeholder="t('auth.signup.email')" required />
+                    <input @change="console.log(email)" v-model="email" id="email-textbox" name="email-textbox" class="textbox" type="email" :placeholder="t('auth.signup.email')" />
                 </div>
 
                 <p class="danger" v-if="userStore.emailExistsError">{{ t('auth.signup.error.emailExists') }}</p>
@@ -32,7 +32,7 @@
 
                 <p class="danger" v-if="userStore.signupError">{{ t('auth.signup.error.default') }}</p>
 
-                <button @click="signup" :disabled="!(username && email && displayName && password && confirmPassword && (password === confirmPassword) && (!submitted || userStore.signupError) && password.length >= 8 && username.length >= 5 && /^[a-z0-9_]+$/.test(username))">{{ t('auth.signup.button') }}</button>
+                <button @click="signup" :disabled="!(username && displayName && password && confirmPassword && (password === confirmPassword) && (!submitted || userStore.signupError) && password.length >= 8 && username.length >= 5 && /^[a-z0-9_]+$/.test(username))">{{ t('auth.signup.button') }}</button>
             </form>
         </section>
     </div>
@@ -58,7 +58,7 @@ const submitted = ref(false)
 function signup() {
     if (!submitted.value || userStore.signupError) {
         submitted.value = true
-        userStore.signup({ username: username.value, email: email.value, displayName: displayName.value, password: password.value })
+        userStore.signup({ username: username.value, email: email.value ? email.value : null, displayName: displayName.value, password: password.value })
     }
 }
 </script>

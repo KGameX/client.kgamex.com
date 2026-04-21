@@ -16,7 +16,7 @@
 
                 <button @click="login" :disabled="!(userlogin && password && (!submitted || userStore.loginError))">{{ t('auth.login.button') }}</button>
 
-                <router-link to="/sign-up">
+                <router-link to="/signup">
                     <p>{{ t('auth.login.no-account') }}</p>
                 </router-link>
             </form>

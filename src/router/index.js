@@ -7,14 +7,19 @@ const routes = [
         component: () => import('@/views/Home.vue')
     },
     {
-        path: '/log-in',
+        path: '/login',
         name: 'Login',
         component: () => import('@/views/Login.vue')
     },
     {
-        path: '/sign-up',
+        path: '/signup',
         name: 'Signup',
         component: () => import('@/views/Signup.vue')
+    },
+    {
+        path: '/logout',
+        name: 'Logout',
+        component: () => import('@/views/Logout.vue')
     },
     {
         path: '/questions',
@@ -30,6 +35,11 @@ const routes = [
         path: '/questions/:id',
         name: 'Question',
         component: () => import('@/views/Question.vue')
+    },
+    {
+        path: '/questions/:id/reply',
+        name: 'ReplyQuestion',
+        component: () => import('@/views/ReplyQuestion.vue')
     },
     {
         path: '/:pathMatch(.*)*',
