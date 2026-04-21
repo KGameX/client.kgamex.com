@@ -22,7 +22,7 @@
             </div>
         </router-link>
 
-        <router-link to="/logout" :title="t('nav.texts.account')" v-if="userStore.user">
+        <router-link to="/logout" :title="t('nav.texts.logout')" v-if="userStore.user">
             <div class="submenu">
                 <div class="icon">
                     <img src="/images/icons/account.svg" width="40" height="40">
@@ -34,14 +34,14 @@
             </div>
         </router-link>
 
-        <router-link to="/login" :title="t('nav.texts.log-in')" v-else>
+        <router-link to="/login" :title="t('nav.texts.login')" v-else>
             <div class="submenu">
                 <div class="icon">
                     <img src="/images/icons/log-in.svg" width="40" height="40">
                 </div>
 
                 <div class="text">
-                    <p>{{ t('nav.texts.log-in') }}</p>
+                    <p>{{ t('nav.texts.login') }}</p>
                 </div>
             </div>
         </router-link>

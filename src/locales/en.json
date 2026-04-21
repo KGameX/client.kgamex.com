@@ -8,7 +8,8 @@
             "blog": "Blog",
             "questions": "Questions",
             "manage": "Manage",
-            "log-in": "Log In",
+            "login": "Log In",
+            "logout": "Log Out",
             "account": "My Account",
             "language": "English"
         },
@@ -113,6 +114,6 @@
 
     "messages": {
         "loading": "Loading...",
-        "logout": "Logging out..."
+        "logging-out": "Logging out..."
     }
 }

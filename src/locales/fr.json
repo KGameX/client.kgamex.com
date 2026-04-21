@@ -8,7 +8,8 @@
             "blog": "Blog",
             "questions": "Questions",
             "manage": "Gérer",
-            "log-in": "Se Connecter",
+            "login": "Se Connecter",
+            "logout": "Se Déconnecter",
             "account": "Mon Compte",
             "language": "Français"
         },
@@ -113,6 +114,6 @@
 
     "messages": {
         "loading": "Chargement...",
-        "logout": "Déconnexion en cours..."
+        "logging-out": "Déconnexion en cours..."
     }
 }
