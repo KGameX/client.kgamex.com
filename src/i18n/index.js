@@ -3,7 +3,7 @@ import { createI18n } from 'vue-i18n'
 import en from '@/locales/en.json'
 import fr from '@/locales/fr.json'
 
-const cookieLang = document.cookie.split('; ').find(row => row.startsWith('lang='))
+const cookieLang = document.cookie.split(';').find(row => row.startsWith('lang='))
 let userLang
 if (cookieLang) {
     userLang = cookieLang.split('=')[1]

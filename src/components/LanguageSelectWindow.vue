@@ -30,7 +30,7 @@ const langs = {
 }
 
 function selectLanguage(lang) {
-    document.cookie = `lang=${lang}; path=/; max-age=7776000`;
+    document.cookie = `lang=${lang};path=/;max-age=7776000`
 }
 
 onMounted(() => {

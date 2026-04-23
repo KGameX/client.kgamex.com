@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 5px 10px;
     word-break: break-word;
+    white-space: pre-wrap;
 }
 
 h1 {
@@ -148,5 +149,5 @@ span.button:hover {
 }
 
 .tab {
-    min-height: 100vh;
+    min-height: calc(100vh - 90px);
 }
