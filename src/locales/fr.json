@@ -62,6 +62,7 @@
         "no-questions": "Il n'y a pas encore de questions. Soyez le premier à en poser une !",
         "asked": "Question posée par {username} le {date}",
         "anonymous": "un utilisateur anonyme",
+        "page": "Page {current} sur {total}",
         "status": {
             "answered": "Répondue",
             "unanswered": "Pas de réponse"

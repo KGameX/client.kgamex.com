@@ -4,15 +4,22 @@ import { defineStore } from 'pinia'
 import router from '@/router'
 
 const useQuestionStore = defineStore('question', () => {
+    const metadata = ref({
+        items_per_page: 50,
+        page: 1,
+        total: 1,
+    })
     const questions = ref([])
     const loading = ref(true)
     const question = ref(null)
 
-    async function fetchQuestions() {
+    async function fetchQuestions(page) {
         try {
             loading.value = true
-            const response = await fetch(`${apiUrl}/question`)
-            questions.value = await response.json()
+            const response = await fetch(`${apiUrl}/question?page=${page || 1}`)
+            const data = await response.json()
+            metadata.value = data.metadata
+            questions.value = data.questions
             loading.value = false
         } catch (error) {
             console.error('Failed to fetch questions : ', error)
@@ -50,7 +57,7 @@ const useQuestionStore = defineStore('question', () => {
         }
     }
 
-    return { questions, loading, question, fetchQuestions, fetchQuestionById, createQuestion }
+    return { metadata, questions, loading, question, fetchQuestions, fetchQuestionById, createQuestion }
 })
 
 export default useQuestionStore

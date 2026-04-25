@@ -38,7 +38,20 @@
         <section v-else>
             <p>{{ t('questions.no-questions') }}</p>
         </section>
-        
+
+        <section class="sample no-padding flex" v-if="questionStore">
+            <div class="flex" v-if="questionStore.metadata.page != 1">
+                <span class="button" @click="questionStore.fetchQuestions(1)">&lt;&lt;</span>
+                <span class="button" @click="questionStore.fetchQuestions(questionStore.metadata.page - 1)">&lt;</span>
+            </div>
+
+            <span class="block">{{ t('questions.page', { current: questionStore.metadata.page, total: Math.ceil(questionStore.metadata.total / questionStore.metadata.items_per_page) }) }}</span>
+            
+            <div class="flex" v-if="questionStore.metadata.page != Math.ceil(questionStore.metadata.total / questionStore.metadata.items_per_page)">
+                <span class="button" @click="questionStore.fetchQuestions(questionStore.metadata.page + 1)">&gt;</span>
+                <span class="button" @click="questionStore.fetchQuestions(Math.ceil(questionStore.metadata.total / questionStore.metadata.items_per_page))">&gt;&gt;</span>
+            </div>
+        </section>        
     </div>
 </template>
 
