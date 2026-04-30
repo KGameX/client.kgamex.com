@@ -15,10 +15,12 @@
                 <p>{{ t('video.published-at', { date: new Date(videoStore.video.published_at).toLocaleDateString() }) }}</p>
             </section>
 
+            <section class="sample no-padding">
+                <a :href="`https://www.youtube.com/watch?v=${videoStore.video.id}`" target="_blank"><span class="button" id="youtube">{{ t('video.watch') }}</span></a>
+            </section>
+            
             <section>
                 <p>{{ videoStore.video.video_locales.find(locale => locale.locale_id === localeStore.userLocale)?.description || videoStore.video.video_locales.find(locale => locale.locale_id === 'en').description }}</p>
-                <br>
-                <p><a :href="`https://www.youtube.com/watch?v=${videoStore.video.id}`" target="_blank"><span class="button" id="youtube">{{ t('video.watch') }}</span></a></p>
             </section>
         </div>
 
