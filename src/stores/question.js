@@ -1,5 +1,5 @@
 import apiUrl from './api_url'
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import router from '@/router'
 
@@ -10,8 +10,8 @@ const useQuestionStore = defineStore('question', () => {
         total: 1,
     })
     const questions = ref([])
-    const loading = ref(true)
     const question = ref(null)
+    const loading = ref(true)
 
     async function fetchQuestions(page) {
         try {

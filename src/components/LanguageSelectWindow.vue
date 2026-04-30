@@ -2,12 +2,13 @@
     <div class="language-select-container">
         <section class="language-select-window">
             <h4>{{ t("languageSelectWindow.title") }}</h4>
-            <div class="radio">
-                <div v-for="(langName, langCode) in langs" :key="langCode">
-                    <input :id="langCode" :value="langCode" v-model="locale" @change="selectLanguage(langCode)" class="radio-button" type="radio">
-                    <label :for="langCode"><span class="button">{{ langName }}</span></label>
+            <div class="padding radio" v-if="!localeStore.loading">
+                <div v-for="locale in localeStore.locales" :key="locale.code">
+                    <input :id="locale.id" :value="locale.id" v-model="localeStore.userLocale" @change="selectLocale(locale.id)" class="radio-button" type="radio">
+                    <label :for="locale.id"><span class="button">{{ locale.name }}</span></label>
                 </div>
             </div>
+            <p v-else>{{ t("messages.loading") }}</p>
             <p><span id="close" class="button">{{ t("buttons.close") }}</span></p>
         </section>
         
@@ -19,18 +20,19 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { onMounted } from 'vue'
+import useLocaleStore from '@/stores/locale'
 
 const emit = defineEmits(['close-language-select-window'])
-
 const { t, locale } = useI18n()
+const localeStore = useLocaleStore()
 
-const langs = {
-    en: "English",
-    fr: "Français"
-}
+localeStore.fetchLocales()
+locale.value = localeStore.userLocale
 
-function selectLanguage(lang) {
+function selectLocale(lang) {
     document.cookie = `lang=${lang};path=/;max-age=7776000`
+    localeStore.setLocale(lang)
+    locale.value = lang
 }
 
 onMounted(() => {

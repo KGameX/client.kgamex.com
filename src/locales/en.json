@@ -54,6 +54,24 @@
         }
     },
 
+    "videos": {
+        "tab-title": "Videos",
+        "title": "KGΛMΞX Videos",
+        "no-videos": "There are no videos yet. Come and check back later !",
+        "fetch-from-youtube": "Fetch from YouTube API",
+        "search": {
+            "videos": "Videos",
+            "shorts": "Shorts"
+        },
+        "disclaimer": "Videos are fetched from YouTube's API every week from the last boot of the API. Currently, the API has been launched on a {dayOfLaunch}."
+    },
+
+    "video": {
+        "published-at": "Published on {date}",
+        "not-found": "Oops ! This video doesn't exist. If you entered the URL manually, check if it's correct !",
+        "watch": "Watch on YouTube"
+    },
+
     "questions": {
         "tab-title": "Questions",
         "title": "All questions",
@@ -62,7 +80,6 @@
         "no-questions": "There are no questions yet. Be the first to ask one !",
         "asked": "Asked by {username} on {date}",
         "anonymous": "an anonymous user",
-        "page": "Page {current} of {total}",
         "status": {
             "answered": "Answered",
             "unanswered": "No answer"
@@ -106,6 +123,10 @@
         "title": "Select your language" 
     },
 
+    "pagination": {
+        "page": "Page {current} of {total}"
+    },
+
     "buttons": {
         "close": "Close",
         "confirm": "Confirm",
@@ -116,5 +137,15 @@
     "messages": {
         "loading": "Loading...",
         "logging-out": "Logging out..."
+    },
+
+    "days" : {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
     }
 }

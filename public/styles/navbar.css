@@ -16,7 +16,7 @@
 .navbar a {
     text-decoration: none;
     color: black;
-    transition: all 1s cubic-bezier(1, 0, 0, 1), opacity 0.3s ease-in-out;
+    transition: all 1s cubic-bezier(1, 0, 0, 1), opacity 0.25s ease-in-out;
 }
 
 .navbar p {
@@ -33,7 +33,7 @@
     justify-content: center;
     cursor: pointer;
     overflow: hidden;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.25s ease-in-out;
 }
 
 .navbar div.dropdown-toggle:hover {
@@ -67,7 +67,7 @@
 .navbar .submenu {
     width: 300px;
     justify-content: center;
-    transition: background-color 0.3s ease-in-out, position 1s cubic-bezier(1, 0, 0, 1), width 1s cubic-bezier(1, 0, 0, 1);
+    transition: background-color 0.25s ease-in-out, position 1s cubic-bezier(1, 0, 0, 1), width 1s cubic-bezier(1, 0, 0, 1);
 }
 
 .navbar .submenu .icon {

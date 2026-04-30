@@ -10,6 +10,18 @@
             </div>
         </router-link>
 
+        <router-link to="/videos" :title="t('nav.texts.videos')">
+            <div class="submenu">
+                <div class="icon">
+                    <img src="/images/icons/videos.svg" width="40" height="40">
+                </div>
+
+                <div class="text">
+                    <p>{{ t('nav.texts.videos') }}</p>
+                </div>
+            </div>
+        </router-link>
+
         <router-link to="/questions" :title="t('nav.texts.questions')">
             <div class="submenu">
                 <div class="icon">
@@ -55,18 +67,6 @@
 
                     <div class="text">
                         <p>{{ t('nav.texts.activities') }}</p>
-                    </div>
-                </div>
-            </router-link>
-
-            <router-link to="/videos" :title="t('nav.texts.videos')">
-                <div class="submenu">
-                    <div class="icon">
-                        <img src="/images/icons/videos.svg" width="40" height="40">
-                    </div>
-
-                    <div class="text">
-                        <p>{{ t('nav.texts.videos') }}</p>
                     </div>
                 </div>
             </router-link>
@@ -166,13 +166,19 @@ import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LanguageSelectWindow from './components/LanguageSelectWindow.vue'
 import useUserStore from '@/stores/user'
+import useLocaleStore from '@/stores/locale'
+import useUptimeStore from '@/stores/uptime'
 
 const { t } = useI18n()
 const year = new Date().getFullYear()
 const languageSelectWindowVisible = ref(false)
 const userStore = useUserStore()
+const localeStore = useLocaleStore()
+const uptimeStore = useUptimeStore()
 
 userStore.renewAuth()
+uptimeStore.fetchUptime()
+uptimeStore.fetchDayOfLaunch()
 
 onMounted(() => {
     const navbar = document.getElementsByClassName('navbar')[0]

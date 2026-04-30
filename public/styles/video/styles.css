@@ -1,0 +1,21 @@
+.video-thumbnail, .short-thumbnail {
+    background-size: cover;
+    background-position: center;
+}
+
+
+.video-thumbnail {
+    width: 800px;
+    height: 450px;
+    border-radius: 5px;
+}
+
+.short-thumbnail {
+    width: 405px;
+    height: 720px;
+    border-radius: 5px;
+}
+
+#youtube:hover {
+    background-color: #ff002f;
+}

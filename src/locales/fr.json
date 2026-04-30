@@ -54,6 +54,24 @@
         }
     },
 
+    "videos": {
+        "tab-title": "Vidéos",
+        "title": "KGΛMΞX Videos",
+        "no-videos": "Il n'y a pas encore de vidéos. Revenez plus tard !",
+        "fetch-from-youtube": "Récupérer depuis l'API YouTube",
+        "search": {
+            "videos": "Vidéos",
+            "shorts": "Shorts"
+        },
+        "disclaimer": "Les vidéos sont récupérées depuis l'API de YouTube chaque semaine à partir du dernier démarrage de l'API. Actuellement, l'API a été lancée un {dayOfLaunch}."
+    },
+
+    "video": {
+        "published-at": "Publiée le {date}",
+        "not-found": "Oups ! Cette vidéo n'existe pas. Si vous avez entré l'URL manuellement, vérifiez qu'elle est correcte !",
+        "watch": "Regarder sur YouTube"
+    },
+
     "questions": {
         "tab-title": "Questions",
         "title": "Toutes les questions",
@@ -62,7 +80,6 @@
         "no-questions": "Il n'y a pas encore de questions. Soyez le premier à en poser une !",
         "asked": "Question posée par {username} le {date}",
         "anonymous": "un utilisateur anonyme",
-        "page": "Page {current} sur {total}",
         "status": {
             "answered": "Répondue",
             "unanswered": "Pas de réponse"
@@ -106,6 +123,10 @@
         "title": "Sélectionnez votre langue" 
     },
 
+    "pagination": {
+        "page": "Page {current} sur {total}"
+    },
+
     "buttons": {
         "close": "Fermer",
         "confirm": "Confirmer",
@@ -116,5 +137,15 @@
     "messages": {
         "loading": "Chargement...",
         "logging-out": "Déconnexion en cours..."
-    }
+    },
+
+    "days" : {
+        "0": "Dimanche",
+        "1": "Lundi",
+        "2": "Mardi",
+        "3": "Mercredi",
+        "4": "Jeudi",
+        "5": "Vendredi",
+        "6": "Samedi"
+     }
 }

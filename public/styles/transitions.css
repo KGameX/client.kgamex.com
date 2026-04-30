@@ -1,6 +1,6 @@
 .lsw-fade-enter-active,
 .lsw-fade-leave-active {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
 }
 
 .lsw-fade-enter-from,
