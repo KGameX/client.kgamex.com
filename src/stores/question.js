@@ -12,11 +12,13 @@ const useQuestionStore = defineStore('question', () => {
     const questions = ref([])
     const question = ref(null)
     const loading = ref(true)
+    const submitted = ref(false)
+    const submitError = ref(false)
 
-    async function fetchQuestions(page) {
+    async function fetchQuestions(params) {
         try {
             loading.value = true
-            const response = await fetch(`${apiUrl}/question?page=${page || 1}`)
+            const response = await fetch(`${apiUrl}/question?page=${params.page || 1}`)
             const data = await response.json()
             metadata.value = data.metadata
             questions.value = data.questions
@@ -44,20 +46,31 @@ const useQuestionStore = defineStore('question', () => {
     }
 
     async function createQuestion(data) {
+        submitted.value = true
+        submitError.value = false
+
         try {
             const response = await fetch(`${apiUrl}/question`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             })
-            const result = await response.json()
-            router.push(`/questions/${result.id}`)
+            
+            if (response.ok) {
+                const result = await response.json()
+                router.push(`/questions/${result.id}`)
+            } else {
+                submitError.value = true
+            }
         } catch (error) {
             console.error('Failed to create question : ', error)
+            submitError.value = true
         }
+
+        submitted.value = false
     }
 
-    return { metadata, questions, loading, question, fetchQuestions, fetchQuestionById, createQuestion }
+    return { metadata, questions, loading, question, submitted, submitError, fetchQuestions, fetchQuestionById, createQuestion }
 })
 
 export default useQuestionStore

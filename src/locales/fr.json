@@ -93,6 +93,11 @@
             "answered": "KGΛMΞX a répondu le {date} :",
             "unanswered": "Cette question n'a pas encore été répondue."
         },
+        "comments": {
+            "comment-placeholder": "Laissez un commentaire sur cette question...",
+            "count": "{count} commentaire | {count} commentaires",
+            "login-required": "Vous devez être connecté pour commenter cette question."
+        },
         "not-found": "Oups ! Cette question n'existe pas. Si vous avez entré l'URL manuellement, vérifiez qu'elle est correcte !"
     },
 
@@ -136,7 +141,8 @@
 
     "messages": {
         "loading": "Chargement...",
-        "logging-out": "Déconnexion en cours..."
+        "logging-out": "Déconnexion en cours...",
+        "submit-error": "Une erreur est survenue lors de la soumission. Veuillez réessayer."
     },
 
     "days" : {

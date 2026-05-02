@@ -8,8 +8,8 @@
                 <h4>{{ questionStore.question.body }}</h4>
             </section>
 
-            <section id="textbox-reply" class="no-padding">
-                <textarea name="reply" v-model="replyBody" :placeholder="t('reply-question.form.placeholder')" rows="10" class="textbox no-parent" maxlength="500"></textarea>
+            <section id="textbox-question" class="no-padding">
+                <textarea name="reply" v-model="replyBody" :placeholder="t('reply-question.form.placeholder')" rows="5" class="textbox no-parent" maxlength="500"></textarea>
             </section>
             
             <section class="small-block">
@@ -18,7 +18,7 @@
             </section>
 
             <section class="no-padding flex">
-                <button class="button" :disabled="replyBody.length == 0 || submitted" @click="answerStore.createAnswer({ question_id: route.params.id, body: replyBody }); submitted=true">{{ t('buttons.submit') }}</button>
+                <button class="button" :disabled="replyBody.length == 0 || answerStore.submitted" @click="answerStore.createAnswer({ question_id: route.params.id, body: replyBody }); submitted=true">{{ t('buttons.submit') }}</button>
             </section>
         </div>
 
@@ -56,5 +56,4 @@ userStore.checkRole(3, '/questions')
 questionStore.fetchQuestionById(route.params.id)
 
 const replyBody = ref('')
-const submitted = ref(false)
 </script>

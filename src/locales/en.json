@@ -93,6 +93,11 @@
             "answered": "KGΛMΞX replied on {date} :",
             "unanswered": "This question hasn't been answered yet."
         },
+        "comments": {
+            "comment-placeholder": "Leave a comment on this question...",
+            "count": "{count} comment | {count} comments",
+            "login-required": "You need to be logged in to comment on this question."
+        },
         "not-found": "Oops ! This question doesn't exist. If you entered the URL manually, check if it's correct !"
     },
 
@@ -136,7 +141,8 @@
 
     "messages": {
         "loading": "Loading...",
-        "logging-out": "Logging out..."
+        "logging-out": "Logging out...",
+        "submit-error": "An error occurred while submitting the data. Please try again."
     },
 
     "days" : {

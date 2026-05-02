@@ -32,3 +32,7 @@
     background-color: #007f00;
     color: white;
 }
+
+#textbox-question {
+    height: 125px;
+}

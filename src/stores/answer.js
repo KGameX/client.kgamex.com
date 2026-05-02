@@ -6,6 +6,7 @@ import router from '@/router'
 const useAnswerStore = defineStore('answer', () => {
     const answers = ref([])
     const answer = ref(null)
+    const submitted = ref(false)
     const submitError = ref(false)
 
     async function fetchAnswers() {
@@ -29,6 +30,7 @@ const useAnswerStore = defineStore('answer', () => {
     }
 
     async function createAnswer(data) {
+        submitted.value = true
         submitError.value = false
 
         try {
@@ -41,17 +43,19 @@ const useAnswerStore = defineStore('answer', () => {
             
             if (response.ok) {
                 const result = await response.json()
-                console.log(result)
                 router.push(`/questions/${result.id}`)
             } else {
                 submitError.value = true
             }
         } catch (error) {
             console.error('Failed to create answer : ', error)
+            submitError.value = true
         }
+
+        submitted.value = false
     }
 
-    return { answers, answer, submitError, fetchAnswers, fetchAnswerByQuestionId, createAnswer }
+    return { answers, answer, submitted, submitError, fetchAnswers, fetchAnswerByQuestionId, createAnswer }
 })
 
 export default useAnswerStore

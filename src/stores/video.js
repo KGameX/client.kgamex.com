@@ -13,13 +13,13 @@ const useVideoStore = defineStore('video', () => {
     const video = ref(null)
     const loading = ref(true)
 
-    async function fetchVideos(page, tab) {
+    async function fetchVideos(params) {
         try {
             loading.value = true
-            const response = await fetch(`${apiUrl}/video?page=${page || 1}&isShort=${tab === 'shorts'}`)
+            const response = await fetch(`${apiUrl}/video?page=${params.page || 1}&isShort=${params.tab === 'shorts'}`)
             const data = await response.json()
             metadata.value = data.metadata
-            videos.value = data.data
+            videos.value = data.videos
             loading.value = false
         } catch (error) {
             console.error('Failed to fetch videos : ', error)

@@ -7,11 +7,12 @@
         </section>
 
         <section id="textbox-question" class="no-padding">
-            <textarea name="question" v-model="questionBody" :placeholder="t('ask-question.form.placeholder')" rows="10" class="textbox no-parent" maxlength="500"></textarea>
+            <textarea name="question" v-model="questionBody" :placeholder="t('ask-question.form.placeholder')" rows="5" class="textbox no-parent" maxlength="500"></textarea>
         </section>
         
         <section class="small-block">
             <p>{{ questionBody.length }} / 500</p>
+            <p class="danger" v-if="questionStore.submitError">{{ t('messages.submit-error') }}</p>
         </section>
 
         <section class="no-padding flex">
@@ -19,7 +20,7 @@
                 <input type="checkbox" name="anonymous" id="anonymous"  v-model="anonymous">
                 <label for="anonymous"><span class="button">{{ t('ask-question.form.anonymous') }}</span></label>
             </div>
-            <button class="button" :disabled="questionBody.length == 0 || submitted" @click="questionStore.createQuestion({ user_id: anonymous ? null : userStore.user.id, body: questionBody }); submitted=true">{{ t('buttons.submit') }}</button>
+            <button class="button" :disabled="questionBody.length == 0 || questionStore.submitted" @click="questionStore.createQuestion({ user_id: anonymous ? null : userStore.user.id, body: questionBody })">{{ t('buttons.submit') }}</button>
         </section>
     </div>
 </template>
@@ -37,5 +38,4 @@ const userStore = useUserStore()
 
 const questionBody = ref('')
 const anonymous = ref(false)
-const submitted = ref(false)
 </script>
