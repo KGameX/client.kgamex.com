@@ -9,7 +9,6 @@
             "questions": "Questions",
             "manage": "Manage",
             "login": "Log In",
-            "logout": "Log Out",
             "account": "My Account",
             "language": "English"
         },
@@ -28,6 +27,7 @@
     },
 
     "auth": {
+        "tab-title": "Authentication",
         "title": "Welcome",
         "login": {
             "login": "Username or email",
@@ -51,6 +51,25 @@
             "hint": {
                 "username": "Can only contain letters, numbers and underscores, and must be between 5 and 20 characters long."
             }
+        }
+    },
+
+    "account": {
+        "management": {
+            "tab-title": "Account management",
+            "form": {
+                "new-username": "New username",
+                "new-email": "New email",
+                "new-display-name": "New display name",
+                "button": "Update account",
+                "remove-email": "Remove email",
+                "hint": "Leaving any field empty will keep its current value.\nYou can update one or more fields at the same time."
+            },
+            "logout": "Log out",
+            "update-success": "Account updated successfully.",
+            "update-error": "An error occurred while updating your account. Please try again.",
+            "delete-account": "Delete account",
+            "delete-confirmation": "This will delete all data linked to the account. Proceed ?"
         }
     },
 
@@ -121,7 +140,7 @@
         "tab-title": "404 - Page not found",
         "topper": "Looks like this page doesn't exist !",
         "title": "Getting lost ?",
-        "subtitle": "Don't worry, this happens to me every time.<br>Check out the home page and find your way back !"
+        "subtitle": "Don't worry, this happens to me every time.\nCheck out the home page and find your way back !"
     },
 
     "languageSelectWindow": {

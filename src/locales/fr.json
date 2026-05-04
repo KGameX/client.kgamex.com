@@ -9,7 +9,6 @@
             "questions": "Questions",
             "manage": "Gérer",
             "login": "Se Connecter",
-            "logout": "Se Déconnecter",
             "account": "Mon Compte",
             "language": "Français"
         },
@@ -28,6 +27,7 @@
     },
 
     "auth": {
+        "tab-title": "Authentification",
         "title": "Bienvenue",
         "login": {
             "login": "Nom d'utilisateur ou email",
@@ -51,6 +51,25 @@
             "hint": {
                 "username": "Ne peut contenir que des lettres, des chiffres et des underscores, et doit être compris entre 5 et 20 caractères."
             }
+        }
+    },
+
+    "account": {
+        "management": {
+            "tab-title": "Gestion du compte",
+            "form": {
+                "new-username": "Nouveau nom d'utilisateur",
+                "new-email": "Nouvel email",
+                "new-display-name": "Nouveau nom d'affichage",
+                "button": "Mettre à jour le compte",
+                "remove-email": "Supprimer l'email",
+                "hint": "Laisser un champ vide gardera sa valeur actuelle.\nVous pouvez mettre à jour un ou plusieurs champs en même temps."
+            },
+            "logout": "Se déconnecter",
+            "update-success": "Compte mis à jour avec succès.",
+            "update-error": "Une erreur est survenue lors de la mise à jour de votre compte. Veuillez réessayer.",
+            "delete-account": "Supprimer le compte",
+            "delete-confirmation": "Cela supprimera toutes les données liées au compte. Continuer ?"
         }
     },
 

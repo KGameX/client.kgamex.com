@@ -1,5 +1,7 @@
 <template>
     <div class="center-container auth-container">
+        <title>{{ t('auth.tab-title') }}</title>
+        
         <section>
             <h4>{{ t('auth.title') }}</h4>
 
@@ -33,6 +35,7 @@ const { t } = useI18n()
 const userStore = useUserStore()
 
 userStore.redirectIfAuthenticated()
+userStore.resetFlags()
 
 const userlogin = ref('')
 const password = ref('')

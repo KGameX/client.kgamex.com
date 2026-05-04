@@ -145,6 +145,7 @@ span.button, span.block {
 span.button:hover {
     background-color: #999999;
     color: white;
+    cursor: pointer;
 }
 
 .center-container {

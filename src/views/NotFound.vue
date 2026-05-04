@@ -5,7 +5,7 @@
         <div>
             <p>404 - {{ t('404.topper') }}</p>
             <h1>{{ t('404.title') }}</h1>
-            <p v-html="t('404.subtitle')"></p>
+            <p>{{ t('404.subtitle') }}</p>
         </div>
     </section>
 </template>

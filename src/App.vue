@@ -34,7 +34,7 @@
             </div>
         </router-link>
 
-        <router-link to="/logout" :title="t('nav.texts.logout')" v-if="userStore.user">
+        <router-link to="/account" :title="t('nav.texts.account')" v-if="userStore.user">
             <div class="submenu">
                 <div class="icon">
                     <img src="/images/icons/account.svg" width="40" height="40">
