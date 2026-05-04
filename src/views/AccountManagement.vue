@@ -1,5 +1,7 @@
 <template>
     <div class="center-container auth-container">
+        <title>{{ t('account.management.tab-title') }} | KGΛMΞX</title>
+
         <section>
             <h4>{{ userStore.user.display_name }}</h4>
 

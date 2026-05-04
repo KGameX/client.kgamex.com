@@ -17,7 +17,7 @@
                 <router-link v-for="question in questionStore.questions" :key="question.id" :to="`/questions/${question.id}`" class="question-card">
                     <div>
                         <h6>{{ question.body }}</h6>
-                        <p>{{ t('questions.asked', { username: question.user?.display_name || t('questions.anonymous'), date: new Date(question.created_at).toLocaleDateString() }) }}</p>
+                        <p :title="question.user?.username">{{ t('questions.asked', { username: question.user?.display_name || t('questions.anonymous'), date: new Date(question.created_at).toLocaleDateString() }) }}</p>
                     </div>
                     
                     <div>

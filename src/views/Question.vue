@@ -4,13 +4,13 @@
 
         <div class="tab" v-if="questionStore.question && !questionStore.loading">
             <section>
-                <p>{{ t('question.asked', { username: questionStore.question.user?.display_name || t('question.anonymous'), date: new Date(questionStore.question.created_at).toLocaleDateString()}) }}</p>
+                <p :title="questionStore.question.user?.username">{{ t('question.asked', { username: questionStore.question.user?.display_name || t('question.anonymous'), date: new Date(questionStore.question.created_at).toLocaleDateString()}) }}</p>
                 <h4>{{ questionStore.question.body }}</h4>
             </section>
 
             <section>
                 <div v-if="questionStore.question.answer">
-                    <p>{{ t('question.status.answered', {date: new Date(questionStore.question.answer.created_at).toLocaleDateString()}) }}</p>
+                    <p title="kgamex_vk">{{ t('question.status.answered', {date: new Date(questionStore.question.answer.created_at).toLocaleDateString()}) }}</p>
                     <h6>{{ questionStore.question.answer.body }}</h6>
                 </div>
 
@@ -41,7 +41,7 @@
                     </section>
 
                     <section class="no-padding flex">
-                        <button class="button" :disabled="questionCommentBody.length == 0 || questionCommentStore.submitted" @click="questionCommentStore.createComment({ question_id: questionStore.question.id, body: questionCommentBody })">{{ t('buttons.submit') }}</button>
+                        <button class="button" :disabled="questionCommentBody.length == 0 || questionCommentStore.submitted" @click="questionCommentStore.createComment({ question_id: questionStore.question.id, body: questionCommentBody }); questionCommentBody = ''">{{ t('buttons.submit') }}</button>
                     </section>
                 </div>
 
@@ -50,7 +50,7 @@
                 </section>
 
                 <section v-for="comment in questionCommentStore.comments" :key="comment.id">
-                    <p><b>{{ comment.user.display_name }}</b> <span class="footnote">{{ new Date(comment.created_at).toLocaleDateString() }}</span></p>
+                    <p><b :title="comment.user.username">{{ comment.user.display_name }}</b> <span class="footnote">{{ new Date(comment.created_at).toLocaleDateString() }}</span></p>
                     <p>{{ comment.body }}</p>
                 </section>
 
