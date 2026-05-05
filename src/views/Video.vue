@@ -16,7 +16,7 @@
             </section>
 
             <section class="sample no-padding">
-                <a :href="`https://www.youtube.com/watch?v=${videoStore.video.id}`" target="_blank"><span class="button" id="youtube">{{ t('video.watch') }}</span></a>
+                <a :href="videoStore.video.is_short ? `https://www.youtube.com/shorts/${videoStore.video.id}` : `https://www.youtube.com/watch?v=${videoStore.video.id}`" target="_blank"><span class="button" id="youtube">{{ t('video.watch') }}</span></a>
             </section>
             
             <section>
