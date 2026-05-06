@@ -1,9 +1,38 @@
+[data-theme="light"] {
+    --bg-color: #f2f2f2;
+    --section-color: white;
+    --text-color: black;
+    --text-footnote-color: #404040;
+    --invert-image: invert(0);
+
+    --percent-90: #e6e6e6;
+    --percent-70: #b3b3b3;
+    --percent-60: #999999;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --section-color: #262626;
+    --text-color: white;
+    --text-footnote-color: #b3b3b3;
+    --invert-image: invert(1);
+
+    --percent-90: #333333;
+    --percent-70: #4d4d4d;
+    --percent-60: #666666;
+}
+
 body {
     margin: 0 0 0 100px;
     padding: 0;
     font-family: gotham;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     box-sizing: border-box;
+}
+
+* {
+    transition: all 0.25s ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -11,18 +40,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #e6e6e6;
+    background: var(--percent-90);
 }
 
 ::-webkit-scrollbar-thumb {
     border: 2.5px solid #00000000;
     background-clip: padding-box;
     border-radius: 10px;
-    background-color: #b3b3b3;
+    background-color: var(--percent-70);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #999999;
+    background-color: var(--percent-60);
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -62,12 +91,12 @@ p, li {
 
 .footnote {
     font-size: 15px;
-    color: #404040;
+    color: var(--text-footnote-color);
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
     transition: all 0.25s ease-in-out;
 }
 
@@ -88,7 +117,7 @@ li {
 }
 
 section {
-    background-color: white;
+    background-color: var(--section-color);
     margin: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -96,7 +125,7 @@ section {
 }
 
 .sample {
-    background-color: white;
+    background-color: var(--section-color);
     margin: 10px;
     padding: 5px;
     text-align: center;
@@ -125,9 +154,9 @@ section {
 }
 
 span.button, span.block {
-    color: black;
+    color: var(--text-color);
     display: inline-block;
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     padding: 5px 10px;
     width: fit-content;
     border-radius: 5px;
@@ -139,11 +168,11 @@ span.button, span.block {
 }
 
 .no-padding span.button, .no-padding span.block {
-    background-color: white;
+    background-color: var(--section-color);
 }
 
 span.button:hover {
-    background-color: #999999;
+    background-color: var(--percent-60);
     color: white;
     cursor: pointer;
 }

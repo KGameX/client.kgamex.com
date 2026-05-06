@@ -7,7 +7,7 @@
 }
 
 .question-card {
-    background: white;
+    background: var(--section-color);
     padding: 5px;
     border-radius: 5px;
     display: flex;

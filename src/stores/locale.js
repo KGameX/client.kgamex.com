@@ -5,7 +5,7 @@ import router from '@/router'
 
 const useLocaleStore = defineStore('locale', () => {
     const locales = ref([])
-    const userLocale = ref(document.cookie.split(';').find(row => row.startsWith('lang='))?.split('=')[1] || navigator.language.split('-')[0])
+    const userLocale = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('lang='))?.split('=')[1] || navigator.language.split('-')[0])
     const loading = ref(true)
 
     async function fetchLocales() {

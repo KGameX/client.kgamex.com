@@ -120,7 +120,18 @@
             </router-link>
         </div>
 
-        <div id="change-language-button" class="submenu bottom" :title="t('nav.titles.language')">
+        <div id="change-theme-button" class="submenu bottom" :title="theme === 'light' ? t('nav.titles.theme.dark') : t('nav.titles.theme.light')">
+            <div class="icon">
+                <img src="/images/icons/dark.svg" width="40" height="40" v-if="theme === 'light'">
+                <img src="/images/icons/light.svg" width="40" height="40" v-else>
+            </div>
+
+            <div class="text">
+                <p>{{ theme === 'light' ? t('nav.texts.theme.dark') : t('nav.texts.theme.light') }}</p>
+            </div>
+        </div>
+
+        <div id="change-language-button" class="submenu" :title="t('nav.titles.language')">
             <div class="icon">
                 <img src="/images/icons/language.svg" width="40" height="40">
             </div>
@@ -180,12 +191,16 @@ userStore.renewAuth()
 uptimeStore.fetchUptime()
 uptimeStore.fetchDayOfLaunch()
 
+const theme = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('theme='))?.split('=')[1] || 'light')
+document.documentElement.setAttribute('data-theme', theme.value)
+
 onMounted(() => {
     const navbar = document.getElementsByClassName('navbar')[0]
     const dropdownToggle = document.getElementsByClassName('dropdown-toggle')[0]
     const submenus = document.getElementsByClassName('submenu')
     const homeButton = document.getElementsByClassName('home')[0]
     const changeLanguageButton = document.getElementById('change-language-button')
+    const changeThemeButton = document.getElementById('change-theme-button')
     const coverBox = document.getElementsByClassName('cover-box')[0]
 
     dropdownToggle.addEventListener('click', () => {
@@ -205,7 +220,7 @@ onMounted(() => {
         }
     })
 
-    Array.from(submenus).slice(0, -1).forEach((submenu) => {
+    Array.from(submenus).slice(0, -2).forEach((submenu) => {
         submenu.addEventListener('click', () => {
             if (navbar.classList.contains('expanded')) {
                 navbar.classList.remove('expanded')
@@ -216,6 +231,17 @@ onMounted(() => {
 
     changeLanguageButton.addEventListener('click', () => {
         languageSelectWindowVisible.value = !languageSelectWindowVisible.value
+    })
+
+    changeThemeButton.addEventListener('click', () => {
+        if (theme.value === 'light') {
+            theme.value = 'dark'
+        } else {
+            theme.value = 'light'
+        }
+
+        document.cookie = `theme=${theme.value};path=/;max-age=7776000`
+        document.documentElement.setAttribute('data-theme', theme.value)
     })
 
     coverBox.addEventListener('click', () => {
