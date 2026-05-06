@@ -10,12 +10,20 @@
             "manage": "Gérer",
             "login": "Se Connecter",
             "account": "Mon Compte",
+            "theme": {
+                "light": "Thème Clair",
+                "dark": "Thème Sombre"
+            },
             "language": "Français"
         },
 
         "titles": {
             "dropdown": "Ouvrir / Fermer le panneau latéral",
             "home": "Accueil",
+            "theme": {
+                "light": "Passer au thème clair",
+                "dark": "Passer au thème sombre"
+            },
             "language": "Cliquez pour changer la langue"
         }
     },
