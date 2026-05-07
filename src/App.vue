@@ -122,12 +122,16 @@
 
         <div id="change-theme-button" class="submenu bottom" :title="theme === 'light' ? t('nav.titles.theme.dark') : t('nav.titles.theme.light')">
             <div class="icon">
-                <img src="/images/icons/dark.svg" width="40" height="40" v-if="theme === 'light'">
-                <img src="/images/icons/light.svg" width="40" height="40" v-else>
+                <Transition name="page-fade" mode="out-in">
+                    <img src="/images/icons/dark.svg" width="40" height="40" v-if="theme === 'light'">
+                    <img src="/images/icons/light.svg" width="40" height="40" v-else>
+                </Transition>
             </div>
 
             <div class="text">
-                <p>{{ theme === 'light' ? t('nav.texts.theme.dark') : t('nav.texts.theme.light') }}</p>
+                <Transition name="page-fade" mode="out-in">
+                    <p :key="theme">{{ theme === 'light' ? t('nav.texts.theme.dark') : t('nav.texts.theme.light') }}</p>
+                </Transition>
             </div>
         </div>
 

@@ -78,7 +78,8 @@
 
 .navbar .submenu .text {
     width: 200px;
-    transition: position 1s cubic-bezier(1, 0, 0, 1), width 1s cubic-bezier(1, 0, 0, 1);
+    color: var(--text-color);
+    transition: position 1s cubic-bezier(1, 0, 0, 1), width 1s cubic-bezier(1, 0, 0, 1), color 0.25s ease-in-out;
 }
 
 .navbar.expanded {
