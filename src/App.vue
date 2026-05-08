@@ -184,7 +184,7 @@ import useUserStore from '@/stores/user'
 import useLocaleStore from '@/stores/locale'
 import useUptimeStore from '@/stores/uptime'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const year = new Date().getFullYear()
 const languageSelectWindowVisible = ref(false)
 const userStore = useUserStore()
@@ -194,6 +194,8 @@ const uptimeStore = useUptimeStore()
 userStore.renewAuth()
 uptimeStore.fetchUptime()
 uptimeStore.fetchDayOfLaunch()
+
+locale.value = localeStore.userLocale
 
 const theme = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('theme='))?.split('=')[1] || 'light')
 document.documentElement.setAttribute('data-theme', theme.value)

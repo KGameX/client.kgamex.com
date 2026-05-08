@@ -27,7 +27,6 @@ const { t, locale } = useI18n()
 const localeStore = useLocaleStore()
 
 localeStore.fetchLocales()
-locale.value = localeStore.userLocale
 
 function selectLocale(lang) {
     document.cookie = `lang=${lang};path=/;max-age=7776000`
