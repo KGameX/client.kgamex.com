@@ -135,10 +135,6 @@ section {
     margin: 10px auto;
 }
 
-.padding {
-    padding: 5px 10px;
-}
-
 .no-padding {
     padding: 0;
     background: none;
