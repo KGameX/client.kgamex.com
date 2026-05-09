@@ -103,7 +103,6 @@
         "tab-title": "Questions",
         "title": "All questions",
         "ask": "Ask a question",
-        "reply": "Reply",
         "no-questions": "There are no questions yet. Be the first to ask one !",
         "asked": "Asked by {username} on {date}",
         "anonymous": "an anonymous user",
@@ -112,10 +111,11 @@
             "unanswered": "No answer"
         }
     },
-
+    
     "question": {
         "asked": "{username} asked on {date} :",
         "anonymous": "An anonymous user",
+        "reply": "Reply",
         "status": {
             "answered": "KGΛMΞX replied on {date} :",
             "unanswered": "This question hasn't been answered yet."
@@ -161,6 +161,7 @@
 
     "buttons": {
         "close": "Close",
+        "delete": "Delete",
         "confirm": "Confirm",
         "submit": "Submit",
         "cancel": "Cancel"

@@ -6,7 +6,7 @@
             <h3>{{ t('videos.title') }}</h3>
         </section>
 
-        <section class="sample no-padding radio">
+        <section class="sample no-padding flex">
             <div>
                 <input v-model="tab" @change="tab = 'videos'; videoStore.fetchVideos({ page: 1, tab: 'videos' });" class="radio-button" type="radio" id="videos" name="videos" value="videos" checked>
                 <label for="videos"><span class="button">{{ t('videos.search.videos') }}</span></label>
@@ -19,7 +19,7 @@
 
             <span class="button" v-if="userStore.user && userStore.user.role_id >= 3" @click="confirmFetch = true">{{ t('videos.fetch-from-youtube') }}</span>
 
-            <div v-if="userStore.user && userStore.user.role_id >= 3 && confirmFetch" class="radio">
+            <div v-if="userStore.user && userStore.user.role_id >= 3 && confirmFetch" class="flex">
                 <span class="button" @click="confirmFetch = false; videoStore.fetchFromYouTube()">{{ t('buttons.confirm') }}</span>
 
                 <span class="button" @click="confirmFetch = false">{{ t('buttons.cancel') }}</span>

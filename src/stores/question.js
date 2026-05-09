@@ -70,7 +70,25 @@ const useQuestionStore = defineStore('question', () => {
         submitted.value = false
     }
 
-    return { metadata, questions, loading, question, submitted, submitError, fetchQuestions, fetchQuestionById, createQuestion }
+    async function deleteQuestion(id) {
+        try {
+            const response = await fetch(`${apiUrl}/question/${id}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include'
+            })
+
+            if (response.ok) {
+                router.push('/questions')
+            } else {
+                console.error('Failed to delete question : ', response.statusText)
+            }
+        } catch (error) {
+            console.error('Failed to delete question : ', error)
+        }
+    }
+
+    return { metadata, questions, loading, question, submitted, submitError, fetchQuestions, fetchQuestionById, createQuestion, deleteQuestion }
 })
 
 export default useQuestionStore

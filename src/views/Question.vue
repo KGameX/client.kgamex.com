@@ -19,10 +19,17 @@
                 </div>
             </section>
 
-            <section class="no-padding">
+            <section class="no-padding flex">
                 <router-link :to="`/questions/${questionStore.question.id}/reply`" v-if="userStore.user && userStore.user.role_id >= 3 && !questionStore.question.answer">
-                    <span class="button">{{ t('questions.reply') }}</span>
+                    <span class="button">{{ t('question.reply') }}</span>
                 </router-link>
+
+                <span class="button" v-if="userStore.user && (userStore.user.id == questionStore.question.user?.id || userStore.user.role_id >= 3)" @click="confirmDelete = true">{{ t('buttons.delete') }}</span>
+
+                <div class="flex" v-if="confirmDelete">
+                    <span class="button" @click="questionStore.deleteQuestion(questionStore.question.id)">{{ t('buttons.confirm') }}</span>
+                    <span class="button" @click="confirmDelete = false">{{ t('buttons.cancel') }}</span>
+                </div>
             </section>
 
             <div v-if="questionCommentStore && !questionCommentStore.loading">
@@ -88,6 +95,7 @@ const questionCommentStore = useQuestionCommentStore()
 const userStore = useUserStore()
 
 const questionCommentBody = ref('')
+const confirmDelete = ref(false)
 
 questionStore.fetchQuestionById(route.params.id)
 questionCommentStore.fetchCommentsByQuestionId({ questionId: route.params.id })

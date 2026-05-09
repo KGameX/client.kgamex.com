@@ -103,7 +103,6 @@
         "tab-title": "Questions",
         "title": "Toutes les questions",
         "ask": "Poser une question",
-        "reply": "Répondre",
         "no-questions": "Il n'y a pas encore de questions. Soyez le premier à en poser une !",
         "asked": "Question posée par {username} le {date}",
         "anonymous": "un utilisateur anonyme",
@@ -112,10 +111,11 @@
             "unanswered": "Pas de réponse"
         }
     },
-
+    
     "question": {
         "asked": "{username} a posé la question le {date} :",
         "anonymous": "Un utilisateur anonyme",
+        "reply": "Répondre",
         "status": {
             "answered": "KGΛMΞX a répondu le {date} :",
             "unanswered": "Cette question n'a pas encore été répondue."
@@ -161,6 +161,7 @@
 
     "buttons": {
         "close": "Fermer",
+        "delete": "Supprimer",
         "confirm": "Confirmer",
         "submit": "Valider",
         "cancel": "Annuler"
