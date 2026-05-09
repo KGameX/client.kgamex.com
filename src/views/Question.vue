@@ -24,7 +24,7 @@
                     <span class="button">{{ t('question.reply') }}</span>
                 </router-link>
 
-                <span class="button" v-if="userStore.user && (userStore.user.id == questionStore.question.user?.id || userStore.user.role_id >= 3)" @click="confirmDelete = true">{{ t('buttons.delete') }}</span>
+                <span class="button" @click="confirmDelete = true">{{ t('buttons.delete') }}</span>
 
                 <div class="flex" v-if="confirmDelete">
                     <span class="button" @click="questionStore.deleteQuestion(questionStore.question.id)">{{ t('buttons.confirm') }}</span>
