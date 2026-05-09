@@ -19,7 +19,7 @@
                 </div>
             </section>
 
-            <section class="no-padding flex">
+            <section class="no-padding flex" v-if="userStore.user && (userStore.user.id == questionStore.question.user?.id || userStore.user.role_id >= 3)">
                 <router-link :to="`/questions/${questionStore.question.id}/reply`" v-if="userStore.user && userStore.user.role_id >= 3 && !questionStore.question.answer">
                     <span class="button">{{ t('question.reply') }}</span>
                 </router-link>
