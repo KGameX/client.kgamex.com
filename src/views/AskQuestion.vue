@@ -20,7 +20,7 @@
                 <input type="checkbox" name="anonymous" id="anonymous"  v-model="anonymous">
                 <label for="anonymous"><span class="button">{{ t('ask-question.form.anonymous') }}</span></label>
             </div>
-            <button class="button" :disabled="questionBody.length == 0 || questionStore.submitted" @click="questionStore.createQuestion({ user_id: anonymous ? null : userStore.user.id, body: questionBody })">{{ t('buttons.submit') }}</button>
+            <button class="button" :disabled="questionBody.length == 0 || questionStore.submitted" @click="questionStore.createQuestion({ user_id: anonymous || !userStore.user ? null : userStore.user.id, body: questionBody })">{{ t('buttons.submit') }}</button>
         </section>
     </div>
 </template>
