@@ -16,7 +16,7 @@
 
                 <p class="danger" v-if="userStore.loginError">{{ t('auth.login.error') }}</p>
 
-                <button @click="login" :disabled="!(userlogin && password && (!submitted || userStore.loginError))">{{ t('auth.login.button') }}</button>
+                <button :disabled="!(userlogin && password) || userStore.submitted">{{ t('auth.login.button') }}</button>
 
                 <router-link to="/signup">
                     <p>{{ t('auth.login.no-account') }}</p>
@@ -42,7 +42,7 @@ const password = ref('')
 const submitted = ref(false)
 
 function login() {
-    if (!submitted.value || userStore.loginError) {
+    if (!userStore.submitted) {
         submitted.value = true
         userStore.login({ login: userlogin.value, password: password.value })
     }

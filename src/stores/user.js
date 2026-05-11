@@ -12,9 +12,6 @@ const useUserStore = defineStore('user', () => {
     const usernameExistsError = ref(false)
     const emailExistsError = ref(false)
     const submitted = ref(false)
-    
-    const usernameExists = ref(false)
-    const emailExists = ref(false)
 
     async function checkAuth() {
         try {
@@ -95,41 +92,11 @@ const useUserStore = defineStore('user', () => {
     async function signup(data) {
         signupError.value = false
         submitted.value = true
-
-        usernameExists.value = false
-        emailExists.value = false
-
         usernameExistsError.value = false
         emailExistsError.value = false
 
-        let response
-
         try {
-            response = await fetch(`${apiUrl}/user/username/${data.username}`)
-
-            if (response.ok) {
-                usernameExists.value = true
-            }
-
-            if (data.email) {
-                response = await fetch(`${apiUrl}/user/email/${data.email}`)
-
-                if (response.ok) {
-                    emailExists.value = true
-                }
-            }
-
-            if (usernameExists.value || emailExists.value) {
-                setTimeout(() => {
-                    usernameExistsError.value = usernameExists.value
-                    emailExistsError.value = emailExists.value
-                    signupError.value = true
-                    submitted.value = false
-                }, 1000 + Math.random() * 1000 - 500)
-                return
-            }
-            
-            response = await fetch(`${apiUrl}/auth/signup`, {
+            const response = await fetch(`${apiUrl}/auth/signup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -139,69 +106,41 @@ const useUserStore = defineStore('user', () => {
             if (response.ok) {
                 user.value = await response.json()
                 router.push('/')
+            } else if (response.status === 409) {
+                setTimeout(async () => {
+                    const errorData = await response.json()
+                    usernameExistsError.value = errorData.username_exists
+                    emailExistsError.value = errorData.email_exists
+                    submitted.value = false
+                }, 1000 + Math.random() * 1000 - 500)
             } else {
                 setTimeout(() => {
                     signupError.value = true
+                    submitted.value = false
                 }, 1000 + Math.random() * 1000 - 500)
             }
         } catch (error) {
             console.error('Failed to register : ', error)
             signupError.value = true
+            submitted.value = false
         }
-
-        submitted.value = false
     }
 
     async function updateAccount(data) {
-        updateError.value = false
         updateSuccess.value = false
+        updateError.value = false
         submitted.value = true
-
-        usernameExists.value = false
-        emailExists.value = false
-
         usernameExistsError.value = false
         emailExistsError.value = false
-
-        let updateData = {}
-        let response
         
+        let updateData = {}
+
         try {
-            if (data.username) {
-                response = await fetch(`${apiUrl}/user/username/${data.username}`)
+            if (data.username) updateData.username = data.username
+            if (data.email) updateData.email = data.email
+            if (data.displayName) updateData.display_name = data.displayName
 
-                if (response.ok) {
-                    usernameExists.value = true
-                } else {
-                    updateData.username = data.username
-                }
-            }
-
-            if (data.email) {
-                response = await fetch(`${apiUrl}/user/email/${data.email}`)
-
-                if (response.ok) {
-                    emailExists.value = true
-                } else {
-                    updateData.email = data.email
-                }
-            }
-
-            if (usernameExists.value || emailExists.value) {
-                setTimeout(() => {
-                    usernameExistsError.value = usernameExists.value
-                    emailExistsError.value = emailExists.value
-                    signupError.value = true
-                    submitted.value = false
-                }, 1000 + Math.random() * 1000 - 500)
-                return
-            }
-
-            if (data.displayName) {
-                updateData.display_name = data.displayName
-            }
-
-            response = await fetch(`${apiUrl}/user`, {
+            const response = await fetch(`${apiUrl}/user`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
@@ -211,17 +150,25 @@ const useUserStore = defineStore('user', () => {
             if (response.ok) {
                 user.value = await response.json()
                 updateSuccess.value = true
+                submitted.value = false
+            } else if (response.status === 409) {
+                setTimeout(async () => {
+                    const errorData = await response.json()
+                    usernameExistsError.value = errorData.username_exists
+                    emailExistsError.value = errorData.email_exists
+                    submitted.value = false
+                }, 1000 + Math.random() * 1000 - 500)
             } else {
                 setTimeout(() => {
                     updateError.value = true
+                    submitted.value = false
                 }, 1000 + Math.random() * 1000 - 500)
             }
         } catch (error) {
             console.error('Failed to update account : ', error)
             updateError.value = true
+            submitted.value = false
         }
-
-        submitted.value = false
     }
 
     async function deleteAccount() {
@@ -266,17 +213,14 @@ const useUserStore = defineStore('user', () => {
     }
 
     async function logout() {
-        try {
-            await fetch(`${apiUrl}/auth/logout`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include'
-            })
-            user.value = null
-            router.push('/')
-        } catch (error) {
-            console.error('Failed to logout : ', error)
-        }
+        fetch(`${apiUrl}/auth/logout`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        })
+        
+        router.push('/')
+        user.value = null
     }
 
     function resetFlags() {
@@ -288,7 +232,7 @@ const useUserStore = defineStore('user', () => {
         emailExistsError.value = false
     }
 
-    return { user, loginError, signupError, updateSuccess, updateError, usernameExistsError, emailExistsError, checkAuth, renewAuth, redirectIfAuthenticated, checkRole, login, signup, updateAccount, deleteAccount, removeEmail, logout, resetFlags }
+    return { user, loginError, signupError, updateSuccess, updateError, usernameExistsError, emailExistsError, submitted, checkAuth, renewAuth, redirectIfAuthenticated, checkRole, login, signup, updateAccount, deleteAccount, removeEmail, logout, resetFlags }
 })
 
 export default useUserStore

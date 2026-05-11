@@ -22,11 +22,6 @@ const routes = [
         component: () => import('@/views/Signup.vue')
     },
     {
-        path: '/logout',
-        name: 'Logout',
-        component: () => import('@/views/Logout.vue')
-    },
-    {
         path: '/videos',
         name: 'Videos',
         component: () => import('@/views/Videos.vue')

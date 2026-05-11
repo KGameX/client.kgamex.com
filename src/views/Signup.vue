@@ -34,7 +34,7 @@
 
                 <p class="danger" v-if="userStore.updateError">{{ t('account.management.update-error') }}</p>
 
-                <button @click="signup" :disabled="!(username && displayName && password && confirmPassword && (password === confirmPassword) && (!userStore.submitted) && password.length >= 8 && username.length >= 5 && /^[a-z0-9_]+$/.test(username))">{{ t('auth.signup.button') }}</button>
+                <button :disabled="!(username && displayName && password && confirmPassword && (password === confirmPassword) && password.length >= 8 && username.length >= 5 && /^[a-z0-9_]+$/.test(username)) || userStore.submitted">{{ t('auth.signup.button') }}</button>
             </form>
         </section>
     </div>

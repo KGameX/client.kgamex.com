@@ -22,23 +22,18 @@
                     <input v-model="displayName" id="display-name-textbox" name="display-name-textbox" class="textbox" :placeholder="t('account.management.form.new-display-name')" />
                 </div>
 
-                <p class="footnote">{{ t('account.management.form.hint') }}</p>
-                
+                <p class="footnote">{{ t('account.management.form.hint') }}</p> 
                 <p class="success" v-if="userStore.updateSuccess">{{ t('account.management.update-success') }}</p>
-                
                 <p class="danger" v-if="userStore.updateError">{{ t('account.management.update-error') }}</p>
 
                 <div class="flex">
-                    <button @click="updateAccount" :disabled="!(username || email || displayName)">{{ t('account.management.form.button') }}</button>
-
+                    <button :disabled="!(username || email || displayName) || userStore.submitted">{{ t('account.management.form.button') }}</button>
                     <span class="button" @click="userStore.removeEmail()">{{ t('account.management.form.remove-email') }}</span>
                 </div>
             </form>
 
             <p class="flex">
-                <router-link to="/logout">
-                    <span class="button">{{ t('account.management.logout') }}</span>
-                </router-link>
+                <span class="button" @click="userStore.logout()">{{ t('account.management.logout') }}</span>
                 <span class="button" @click="confirmDelete = true">{{ t('account.management.delete-account') }}</span>
             </p>
 
@@ -46,7 +41,6 @@
             
             <p class="flex" v-if="confirmDelete">
                 <span class="button" @click="confirmDelete = false; userStore.deleteAccount()">{{ t('buttons.confirm') }}</span>
-                
                 <span class="button" @click="confirmDelete = false">{{ t('buttons.cancel') }}</span>
             </p>
         </section>
