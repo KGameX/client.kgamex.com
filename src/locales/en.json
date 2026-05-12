@@ -57,7 +57,7 @@
                 "emailExists": "This email is already registered."
             },
             "hint": {
-                "username": "Can only contain letters, numbers and underscores, and must be between 5 and 20 characters long."
+                "username": "Can only contain lowercase letters, numbers and underscores, and must be between 5 and 20 characters long."
             }
         }
     },
