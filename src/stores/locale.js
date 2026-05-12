@@ -1,7 +1,6 @@
 import apiUrl from './api_url'
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import router from '@/router'
 
 const useLocaleStore = defineStore('locale', () => {
     const locales = ref([])
@@ -21,6 +20,7 @@ const useLocaleStore = defineStore('locale', () => {
 
     function setLocale(locale) {
         userLocale.value = locale
+        document.cookie = `lang=${locale};path=/;max-age=7776000`
     }
 
     return { locales, userLocale, loading, fetchLocales, setLocale }

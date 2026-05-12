@@ -27,7 +27,7 @@
                 <p class="danger" v-if="userStore.updateError">{{ t('account.management.update-error') }}</p>
 
                 <div class="flex">
-                    <button :disabled="!(username || email || displayName) || userStore.submitted">{{ t('account.management.form.button') }}</button>
+                    <button :disabled="!((username && username.length >= 5) || email || displayName) || userStore.submitted">{{ t('account.management.form.button') }}</button>
                     <span class="button" @click="userStore.removeEmail()">{{ t('account.management.form.remove-email') }}</span>
                 </div>
             </form>

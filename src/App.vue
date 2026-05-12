@@ -197,7 +197,7 @@ uptimeStore.fetchDayOfLaunch()
 
 locale.value = localeStore.userLocale
 
-const theme = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('theme='))?.split('=')[1] || 'light')
+const theme = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('theme='))?.split('=')[1] || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') || 'light')
 document.documentElement.setAttribute('data-theme', theme.value)
 
 onMounted(() => {

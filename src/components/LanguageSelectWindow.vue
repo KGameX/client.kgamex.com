@@ -2,12 +2,12 @@
     <div class="language-select-container">
         <section class="language-select-window">
             <h4>{{ t("languageSelectWindow.title") }}</h4>
-            <div class="padding radio" v-if="!localeStore.loading">
+            <p class="radio" v-if="!localeStore.loading">
                 <div v-for="locale in localeStore.locales" :key="locale.code">
                     <input :id="locale.id" :value="locale.id" v-model="localeStore.userLocale" @change="selectLocale(locale.id)" class="radio-button" type="radio">
                     <label :for="locale.id"><span class="button">{{ locale.name }}</span></label>
                 </div>
-            </div>
+            </p>
             <p v-else>{{ t("messages.loading") }}</p>
             <p><span id="close" class="button">{{ t("buttons.close") }}</span></p>
         </section>
@@ -29,7 +29,6 @@ const localeStore = useLocaleStore()
 localeStore.fetchLocales()
 
 function selectLocale(lang) {
-    document.cookie = `lang=${lang};path=/;max-age=7776000`
     localeStore.setLocale(lang)
     locale.value = lang
 }
