@@ -169,7 +169,6 @@
 
     "messages": {
         "loading": "Loading...",
-        "logging-out": "Logging out...",
         "submit-error": "An error occurred while submitting the data. Please try again."
     },
 
