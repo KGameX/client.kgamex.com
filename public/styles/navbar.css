@@ -104,7 +104,7 @@
 }
 
 .navbar.expanded .submenu .text {
-    width: 150px;
+    width: 160px; /*150px*/
 }
 
 .navbar .bottom {
