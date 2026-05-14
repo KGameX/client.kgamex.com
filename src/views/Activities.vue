@@ -21,7 +21,7 @@
                     <div>
                         <h6>Beat Saber</h6>
                     </div>
-                    <router-link to="/activities/beat-saber"><span class="button beat-saber">Look</span></router-link>
+                    <router-link to="/activities/beat-saber"><span class="button beat-saber">{{ t('buttons.look') }}</span></router-link>
                 </div>
             </div>
 

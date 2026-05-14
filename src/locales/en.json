@@ -204,7 +204,8 @@
         "delete": "Delete",
         "confirm": "Confirm",
         "submit": "Submit",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "look" : "Look"
     },
 
     "messages": {
