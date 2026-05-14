@@ -1,7 +1,5 @@
 <template>
     <div class="center-container auth-container">
-        <title>{{ t('auth.tab-title') }} | KGΛMΞX</title>
-
         <section>
             <h4>{{ t('auth.title') }}</h4>
 
@@ -44,9 +42,11 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import useUserStore from '@/stores/user'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const userStore = useUserStore()
+usePageTitle('auth.tab-title')
 
 userStore.redirectIfAuthenticated()
 userStore.resetFlags()

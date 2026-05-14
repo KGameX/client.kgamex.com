@@ -1,7 +1,5 @@
 <template>
     <div>
-        <title>KGΛMΞX - Live it, for Real.</title>
-
         <section class="main-home">
             <div>
                 <h1>Live it,<br>for Real.</h1>
@@ -32,7 +30,10 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { usePageTitle } from '@/composables/page_title'
+
 const { t } = useI18n()
+usePageTitle('KGΛMΞX - Live it, for Real.', true)
 
 const poses = [
     '/images/kgamex-poses/beat-saber.svg',
@@ -54,16 +55,14 @@ const pose = ref(0)
 const application = ref(0)
 
 function poseLoop() {
-    setTimeout(() => {
+    setInterval(() => {
         pose.value = (pose.value + 1) % poses.length
-        poseLoop()
     }, 15000)
 }
 
 function applicationLoop() {
-    setTimeout(() => {
+    setInterval(() => {
         application.value = (application.value + 1) % applications.length
-        applicationLoop()
     }, 5000)
 }
 

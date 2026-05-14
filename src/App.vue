@@ -10,6 +10,18 @@
             </div>
         </router-link>
 
+        <router-link to="/activities" :title="t('nav.texts.activities')">
+            <div class="submenu">
+                <div class="icon">
+                    <img src="/images/icons/activities.svg" width="40" height="40">
+                </div>
+
+                <div class="text">
+                    <p>{{ t('nav.texts.activities') }}</p>
+                </div>
+            </div>
+        </router-link>
+
         <router-link to="/videos" :title="t('nav.texts.videos')">
             <div class="submenu">
                 <div class="icon">
@@ -59,18 +71,6 @@
         </router-link>
 
         <div v-if="false">
-            <router-link to="/activities" :title="t('nav.texts.activities')">
-                <div class="submenu">
-                    <div class="icon">
-                        <img src="/images/icons/activities.svg" width="40" height="40">
-                    </div>
-
-                    <div class="text">
-                        <p>{{ t('nav.texts.activities') }}</p>
-                    </div>
-                </div>
-            </router-link>
-
             <router-link to="/blog" :title="t('nav.texts.blog')">
                 <div class="submenu">
                     <div class="icon">

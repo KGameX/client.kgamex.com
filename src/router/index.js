@@ -7,19 +7,14 @@ const routes = [
         component: () => import('@/views/Home.vue')
     },
     {
-        path: '/account',
-        name: 'Account',
-        component: () => import('@/views/AccountManagement.vue')
+        path: '/activities',
+        name: 'Activities',
+        component: () => import('@/views/Activities.vue')
     },
     {
-        path: '/login',
-        name: 'Login',
-        component: () => import('@/views/Login.vue')
-    },
-    {
-        path: '/signup',
-        name: 'Signup',
-        component: () => import('@/views/Signup.vue')
+        path: '/activities/beat-saber',
+        name: 'BeatSaber',
+        component: () => import('@/views/BeatSaber.vue')
     },
     {
         path: '/videos',
@@ -50,6 +45,21 @@ const routes = [
         path: '/questions/:id/reply',
         name: 'ReplyQuestion',
         component: () => import('@/views/ReplyQuestion.vue')
+    },
+    {
+        path: '/account',
+        name: 'Account',
+        component: () => import('@/views/AccountManagement.vue')
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/Login.vue')
+    },
+    {
+        path: '/signup',
+        name: 'Signup',
+        component: () => import('@/views/Signup.vue')
     },
     {
         path: '/:pathMatch(.*)*',

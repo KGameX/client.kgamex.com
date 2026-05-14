@@ -1,7 +1,5 @@
 <template>
     <div class="tab">
-        <title>{{ t('ask-question.tab-title') }} | KGΛMΞX</title>
-        
         <section class="sample">
             <h3>{{ t('ask-question.title') }}</h3>
         </section>
@@ -30,11 +28,12 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import useQuestionStore from '@/stores/question'
 import useUserStore from '@/stores/user'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
-
 const questionStore = useQuestionStore()
 const userStore = useUserStore()
+usePageTitle('ask-question.tab-title')
 
 const questionBody = ref('')
 const anonymous = ref(false)

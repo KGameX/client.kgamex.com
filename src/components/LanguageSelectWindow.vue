@@ -14,7 +14,6 @@
         
         <div class="language-select-cover-box"></div>
     </div>
-
 </template>
 
 <script setup>

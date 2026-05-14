@@ -1,7 +1,5 @@
 <template>
     <div>
-        <title>{{ t('reply-question.tab-title') }} | KGΛMΞX</title>
-
         <div class="tab" v-if="questionStore.question && !questionStore.loading">
             <section>
                 <p>{{ t('question.asked', { username: questionStore.question.user?.display_name || t('question.anonymous'), date: new Date(questionStore.question.created_at).toLocaleDateString()}) }}</p>
@@ -43,9 +41,11 @@ import { useRoute } from 'vue-router'
 import useAnswerStore from '@/stores/answer'
 import useQuestionStore from '@/stores/question'
 import useUserStore from '@/stores/user'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const route = useRoute()
+usePageTitle('reply-question.tab-title')
 
 const answerStore = useAnswerStore()
 const questionStore = useQuestionStore()

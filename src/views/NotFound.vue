@@ -1,7 +1,5 @@
 <template>
     <section class="main-404">
-        <title>{{ t('404.tab-title') }} | KGΛMΞX</title>
-
         <div>
             <p>404 - {{ t('404.topper') }}</p>
             <h1>{{ t('404.title') }}</h1>
@@ -13,4 +11,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+import { usePageTitle } from '@/composables/page_title'
+
+usePageTitle('404.tab-title')
 </script>

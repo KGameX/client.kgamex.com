@@ -1,7 +1,5 @@
 <template>
     <div class="tab">
-        <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
-
         <section class="sample">
             <h3>{{ t('questions.title') }}</h3>
         </section>
@@ -45,9 +43,11 @@
 import { useI18n } from 'vue-i18n'
 import useQuestionStore from '@/stores/question'
 import Pagination from '@/components/Pagination.vue'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const questionStore = useQuestionStore()
+usePageTitle('questions.tab-title')
 
 questionStore.fetchQuestions({})
 </script>

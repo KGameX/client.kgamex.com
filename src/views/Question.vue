@@ -1,7 +1,5 @@
 <template>
     <div>
-        <title>{{ t('questions.tab-title') }} | KGΛMΞX</title>
-
         <div class="tab" v-if="questionStore.question && !questionStore.loading">
             <section>
                 <p :title="questionStore.question.user?.username">{{ t('question.asked', { username: questionStore.question.user?.display_name || t('question.anonymous'), date: new Date(questionStore.question.created_at).toLocaleDateString()}) }}</p>
@@ -87,12 +85,14 @@ import useQuestionStore from '@/stores/question'
 import useQuestionCommentStore from '@/stores/question_comment'
 import useUserStore from '@/stores/user'
 import Pagination from '@/components/Pagination.vue'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const route = useRoute()
 const questionStore = useQuestionStore()
 const questionCommentStore = useQuestionCommentStore()
 const userStore = useUserStore()
+usePageTitle('questions.tab-title')
 
 const questionCommentBody = ref('')
 const confirmDelete = ref(false)

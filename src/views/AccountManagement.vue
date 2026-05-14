@@ -1,7 +1,5 @@
 <template>
     <div class="center-container auth-container">
-        <title>{{ t('account.management.tab-title') }} | KGΛMΞX</title>
-
         <section>
             <h4>{{ userStore.user.display_name }}</h4>
 
@@ -51,9 +49,11 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import useUserStore from '@/stores/user'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const userStore = useUserStore()
+usePageTitle('account.management.tab-title')
 
 userStore.checkRole(1, '/')
 userStore.resetFlags()

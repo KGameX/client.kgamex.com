@@ -1,19 +1,17 @@
 <template>
     <div class="tab">
-        <title>{{ t('videos.tab-title') }} | KGΛMΞX</title>
-
         <section class="sample">
             <h3>{{ t('videos.title') }}</h3>
         </section>
 
         <section class="sample no-padding flex">
             <div>
-                <input v-model="tab" @change="tab = 'videos'; videoStore.fetchVideos({ page: 1, tab: 'videos' });" class="radio-button" type="radio" id="videos" name="videos" value="videos" checked>
+                <input v-model="tab" @change="tab = 'videos'" class="radio-button" type="radio" id="videos" name="videos" value="videos" checked>
                 <label for="videos"><span class="button">{{ t('videos.search.videos') }}</span></label>
             </div>
 
             <div>
-                <input v-model="tab" @change="tab = 'shorts'; videoStore.fetchVideos({ page: 1, tab: 'shorts' });" class="radio-button" type="radio" id="shorts" name="videos" value="shorts">
+                <input v-model="tab" @change="tab = 'shorts'" class="radio-button" type="radio" id="shorts" name="shorts" value="shorts">
                 <label for="shorts"><span class="button">{{ t('videos.search.shorts') }}</span></label>
             </div>
 
@@ -51,21 +49,27 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import useUserStore from '@/stores/user'
 import useVideoStore from '@/stores/video'
 import useLocaleStore from '@/stores/locale'
 import useUptimeStore from '@/stores/uptime'
 import Pagination from '@/components/Pagination.vue'
+import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
 const userStore = useUserStore()
 const videoStore = useVideoStore()
 const localeStore = useLocaleStore()
 const uptimeStore = useUptimeStore()
+usePageTitle('videos.tab-title')
 
 const tab = ref('videos')
 const confirmFetch = ref(false)
 videoStore.fetchVideos({})
+
+watch(tab, (newTab) => {
+    videoStore.fetchVideos({ page: 1, tab: newTab })
+})
 </script>

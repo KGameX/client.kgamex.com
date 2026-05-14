@@ -34,50 +34,43 @@
         "tools-presentation": "<p>Au cours de mes projets universitaires et personnels, j'ai appris à utiliser divers outils pour différentes finalités.</p><p>Certains d'entre eux incluent :<ul><li>Visual Studio Code et IntelliJ IDEA pour la programmation ;</li><li>Inkscape pour le design graphique ;</li><li>Shotcut pour le montage vidéo ;</li><li>Unity pour le développement de jeux.</li></ul></p>"
     },
 
-    "auth": {
-        "tab-title": "Authentification",
-        "title": "Bienvenue",
-        "login": {
-            "login": "Nom d'utilisateur ou email",
-            "password": "Mot de passe",
-            "button": "Se connecter",
-            "error": "L'identifiant ou le mot de passe sont incorrects.",
-            "no-account": "Vous n'avez pas de compte ?"
-        },
-        "signup": {
-            "username": "Nom d'utilisateur",
-            "email": "Email (Optionnel)",
-            "display-name": "Nom d'affichage",
-            "password": "Mot de passe",
-            "confirm-password": "Confirmer le mot de passe",
-            "button": "S'inscrire",
-            "error": {
-                "default": "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
-                "usernameExists": "Ce nom d'utilisateur est déjà pris.",
-                "emailExists": "Cet email est déjà enregistré."
+    "activities": {
+        "tab-title": "Activités",
+        "title": "Activités",
+        "coming-soon": "Bientôt disponible",
+        "beat-saber": {
+            "tab-title": "Beat Saber",
+            "player-stats": {
+                "global-country-rank": "Classement mondial / national",
+                "average-median-accuracy": "Précision moyenne / médiane classée",
+                "play-count": "Nombre de parties",
+                "play-time": "Temps de jeu",
+                "total-play-count": "{total} ({ranked} classées)"
             },
-            "hint": {
-                "username": "Ne peut contenir que des minuscules, des chiffres et des underscores, et doit être compris entre 5 et 20 caractères."
-            }
-        }
-    },
-
-    "account": {
-        "management": {
-            "tab-title": "Gestion du compte",
-            "form": {
-                "new-username": "Nouveau nom d'utilisateur",
-                "new-email": "Nouvel email",
-                "new-display-name": "Nouveau nom d'affichage",
-                "button": "Mettre à jour le compte",
-                "remove-email": "Supprimer l'email",
-                "hint": "Laisser un champ vide gardera sa valeur actuelle.\nVous pouvez mettre à jour un ou plusieurs champs en même temps."
+            "no-scores": "Pas de scores.",
+            "score-sort": {
+                "ranked": "Classées",
+                "all-scores": "Tous les scores",
+                "attempts": "Tentatives"
             },
-            "logout": "Se déconnecter",
-            "update-success": "Compte mis à jour avec succès.",
-            "update-error": "Une erreur est survenue lors de la mise à jour de votre compte. Veuillez réessayer.",
-            "delete-account": "Supprimer le compte",
-            "delete-confirmation": "Cela supprimera toutes les données liées au compte. Continuer ?"
+            "score": {
+                "date": "Joué le {date}",
+                "bad-cuts": "{count} mauvais coup | {count} mauvais coups",
+                "missed-notes": "{count} note manquée | {count} notes manquées",
+                "bomb-cuts": "{count} bombe coupée | {count} bombes coupées",
+                "walls-hit": "{count} mur touché | {count} murs touchés",
+                "full-combo": "Full Combo",
+                "weighted-pp": "Pondéré : {value} pp",
+                "left-hand-accuracy": "Précision de la main gauche",
+                "right-hand-accuracy": "Précision de la main droite",
+                "attempt-status": {
+                    "1": "Réussi",
+                    "2": "Échoué à {time}",
+                    "3": "Recommencé à {time}",
+                    "4": "Quitté à {time}"
+                }
+            },
+            "footnote": "Alimenté par l'API de BeatLeader."
         }
     },
 
@@ -141,6 +134,53 @@
         "tab-title": "Répondre à une question",
         "form": {
             "placeholder": "Quelle est votre réponse à cette question ?"
+        }
+    },
+
+    "auth": {
+        "tab-title": "Authentification",
+        "title": "Bienvenue",
+        "login": {
+            "login": "Nom d'utilisateur ou email",
+            "password": "Mot de passe",
+            "button": "Se connecter",
+            "error": "L'identifiant ou le mot de passe sont incorrects.",
+            "no-account": "Vous n'avez pas de compte ?"
+        },
+        "signup": {
+            "username": "Nom d'utilisateur",
+            "email": "Email (Optionnel)",
+            "display-name": "Nom d'affichage",
+            "password": "Mot de passe",
+            "confirm-password": "Confirmer le mot de passe",
+            "button": "S'inscrire",
+            "error": {
+                "default": "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+                "usernameExists": "Ce nom d'utilisateur est déjà pris.",
+                "emailExists": "Cet email est déjà enregistré."
+            },
+            "hint": {
+                "username": "Ne peut contenir que des minuscules, des chiffres et des underscores, et doit être compris entre 5 et 20 caractères."
+            }
+        }
+    },
+
+    "account": {
+        "management": {
+            "tab-title": "Gestion du compte",
+            "form": {
+                "new-username": "Nouveau nom d'utilisateur",
+                "new-email": "Nouvel email",
+                "new-display-name": "Nouveau nom d'affichage",
+                "button": "Mettre à jour le compte",
+                "remove-email": "Supprimer l'email",
+                "hint": "Laisser un champ vide gardera sa valeur actuelle.\nVous pouvez mettre à jour un ou plusieurs champs en même temps."
+            },
+            "logout": "Se déconnecter",
+            "update-success": "Compte mis à jour avec succès.",
+            "update-error": "Une erreur est survenue lors de la mise à jour de votre compte. Veuillez réessayer.",
+            "delete-account": "Supprimer le compte",
+            "delete-confirmation": "Cela supprimera toutes les données liées au compte. Continuer ?"
         }
     },
 
