@@ -156,6 +156,22 @@
         </div>
     </div>
 
+    <div class="mobile-cover">
+        <div class="mobile-cover-corner">
+            <svg>
+                <path d="M 0,87.5 V 0 h 12.5 v 82.5 a 5,5 135 0 0 -5,5 z"/>
+            </svg>
+
+            <svg>
+                <path d="M 0,0 H 12.5 V 87.5 H 5 a 5,5 45 0 0 -5,-5 z" />
+            </svg>
+        </div>
+
+        <svg class="mobile-cover-rect">
+            <path d="M 0,0 H 1000 V 82.5 H 0 Z" />
+        </svg>
+    </div>
+
     <transition name="lsw-fade">
         <LanguageSelectWindow v-if="languageSelectWindowVisible" @close-language-select-window="languageSelectWindowVisible = false"/>
     </transition>

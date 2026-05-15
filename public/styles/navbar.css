@@ -116,6 +116,10 @@
     margin-top: auto;
 }
 
+.mobile-cover {
+    display: none;
+}
+
 .cover-box {
     position: fixed;
     top: 0;
@@ -240,4 +244,35 @@
     .navbar .bottom {
         margin-top: 0;
     }
+
+    .mobile-cover {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: block;
+        z-index: 90;
+    }
+
+    .mobile-cover-corner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-cover-corner svg {
+        width: 12.5px;
+    }
+
+    .mobile-cover-rect {
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .mobile-cover-rect svg {
+        width: 100%;
+    }
+
+    .mobile-cover svg path {
+        fill: var(--bg-color);
+    };
 }
