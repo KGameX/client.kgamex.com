@@ -89,6 +89,11 @@ p, li {
     font-size: 20px;
 }
 
+ul {
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
 .footnote {
     font-size: 15px;
     color: var(--text-footnote-color);
