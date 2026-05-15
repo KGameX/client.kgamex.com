@@ -31,7 +31,7 @@
     "home": {
         "main-subtitle": "I play games. Lots of games.",
         "presentation": "<h5>Hi, I'm KGΛMΞX.</h5><p>I'm a student in Computer Science.</p><p>When I talk online, I enrole a stickman (very) originally named Blue.</p><p>I play a lot of video games, especially Beat Saber, on which I'm ranked in the top 1.9% worldwide.</p><p>When I don't have my VR headset, I play other games like Geometry Dash, Minecraft and Mario Kart.</p>",
-        "tools-presentation": "<p>Throughout university and personal projects, I learned various tools for multiple purposes.</p><p>Some of them include :<ul><li>Visual Studio Code and IntelliJ IDEA for programming ;</li><li>Inkscape for graphic design ;</li><li>Shotcut for video editing ;</li><li>Unity for game development.</li></ul></p>"
+        "tools-presentation": "<p>Throughout university and personal projects, I learned various tools for multiple purposes.</p><p>Some of them include :<ul><li>Visual Studio Code and IntelliJ IDEA for programming ;</li><li>Inkscape for graphic design ;</li><li>Shotcut for video editing ;</li><li>Unity for game development.</li></ul>"
     },
 
     "activities": {
@@ -61,13 +61,15 @@
                 "walls-hit": "{count} wall hit | {count} wall hits",
                 "full-combo": "Full Combo",
                 "weighted-pp": "Weighted : {value} pp",
+                "unranked": "Unranked",
                 "left-hand-accuracy": "Left hand accuracy",
                 "right-hand-accuracy": "Right hand accuracy",
                 "attempt-status": {
                     "1": "Cleared",
                     "2": "Failed at {time}",
                     "3": "Restart at {time}",
-                    "4": "Quit at {time}"
+                    "4": "Quit at {time}",
+                    "5": "Practice from {startTime} to {time}"
                 }
             },
             "footnote": "Powered by BeatLeader's API."
@@ -192,7 +194,7 @@
     },
 
     "languageSelectWindow": {
-        "title": "Select your language" 
+        "title": "Language" 
     },
 
     "pagination": {

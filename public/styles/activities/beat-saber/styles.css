@@ -1,5 +1,5 @@
-.main-activities#beat-saber {
-    background-image: url("/images/kgamex-poses/beat-saber.svg"), linear-gradient(135deg, #d91041, #b22ba8, #5475da);
+.main-activity#beat-saber {
+    background-image: url(/images/kgamex-poses/beat-saber.svg), linear-gradient(135deg, #d91041, #b22ba8, #5475da);
 }
 
 .player-stats {
@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
     justify-content: center;
     border-radius: 5px;
     padding: 5px;
@@ -41,7 +42,7 @@
 
 .score-cover {
     border-radius: 5px;
-    height: 150px;
+    height: 160px;
 }
 
 .score-text {
@@ -61,6 +62,10 @@
     flex-direction: row;
 }
 
+.score-text div.score-data p {
+    word-break: keep-all;
+}
+
 .score-text div.score-data div {
     align-items: flex-end;
 }
@@ -68,9 +73,6 @@
 .block.pp {
     background-color: #8992e8;
     color: white;
-}
-
-.block.pp {
     width: 180px;
 }
 
@@ -89,4 +91,92 @@
 
 .block.acc-right {
     background-color: #0032ff;
+}
+
+@media (max-width: 1400px) {
+    .player-stats {
+        flex-direction: column;
+    }
+
+    .player-data {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .score-text div.score-data {
+        flex-direction: column;
+    }
+
+    .score-text div.score-data div:nth-child(1) {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 1000px) {
+    .player-stats {
+        margin: 7.5px;
+        gap: 7.5px;
+    }
+
+    .score-list {
+        margin: 7.5px;
+        gap: 7.5px;
+    }
+
+    .player-data {
+        flex-direction: column;
+    }
+
+    .score-card {
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.25s ease-in-out;
+        padding-top: 10px;
+    }
+
+    .score-cover {
+        border-radius: 5px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .score-text {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .score-text div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .score-text div.score-data {
+        flex-direction: column;
+    }
+
+    .block.pp {
+        width: 150px;
+    }
+
+    .block.score {
+        width: 100px;
+    }
+
+    .block.acc-left, .block.acc-right {
+        width: 61.25px;
+        color: white;
+    }
+
+    .block.acc-left {
+        background-color: #00e6ff;
+    }
+
+    .block.acc-right {
+        background-color: #0032ff;
+    }
+
+    .score-text div.score-data div p.flex {
+        padding-top: 2.5px;
+    }
 }

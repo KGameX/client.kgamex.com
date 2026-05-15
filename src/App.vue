@@ -1,11 +1,21 @@
 <template>
     <div class="navbar">
-        <div class="dropdown-toggle" :title="t('nav.titles.dropdown')">
-            <img src="/images/icons/dropdown.svg" width="40" height="40">
+        <div class="menu">
+            <div class="dropdown-toggle" :title="t('nav.titles.dropdown')">
+                <img src="/images/icons/dropdown.svg" width="40" height="40">
+            </div>
+
+            <router-link to="/">
+                <div class="home" :title="t('nav.titles.home')">
+                    <img src="/images/home-icon-kgamex.svg">
+                </div>
+            </router-link>
+
+            <div class="hidden"></div>
         </div>
 
         <router-link to="/">
-            <div class="home" :title="t('nav.titles.home')">
+            <div class="home-mobile" :title="t('nav.titles.home')">
                 <img src="/images/home-icon-kgamex.svg">
             </div>
         </router-link>
@@ -205,6 +215,7 @@ onMounted(() => {
     const dropdownToggle = document.getElementsByClassName('dropdown-toggle')[0]
     const submenus = document.getElementsByClassName('submenu')
     const homeButton = document.getElementsByClassName('home')[0]
+    const homeButtonMobile = document.getElementsByClassName('home-mobile')[0]
     const changeLanguageButton = document.getElementById('change-language-button')
     const changeThemeButton = document.getElementById('change-theme-button')
     const coverBox = document.getElementsByClassName('cover-box')[0]
@@ -220,6 +231,13 @@ onMounted(() => {
     });
 
     homeButton.addEventListener('click', () => {
+        if (navbar.classList.contains('expanded')) {
+            navbar.classList.remove('expanded')
+            coverBox.classList.add('hidden')
+        }
+    })
+
+    homeButtonMobile.addEventListener('click', () => {
         if (navbar.classList.contains('expanded')) {
             navbar.classList.remove('expanded')
             coverBox.classList.add('hidden')

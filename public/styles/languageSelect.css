@@ -25,6 +25,7 @@
 
 .language-select-window {
     width: 50%;
+    min-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;

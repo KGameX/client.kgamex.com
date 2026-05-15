@@ -25,8 +25,9 @@
         </section>
 
         <div class="video-grid" v-if="videoStore.videos.length > 0 && !videoStore.loading">
-            <router-link v-for="video in videoStore.videos" :key="video.id" :to="`/videos/${video.id}`" :class="video.is_short ? 'short-card' : 'video-card'" :style="{ backgroundImage: `url(${video.thumbnail_url})` }">
+            <router-link v-for="video in videoStore.videos" :key="video.id" :to="`/videos/${video.id}`" :class="video.is_short ? 'short-card' : 'video-card'">
                 <div>
+                    <img :src="video.thumbnail_url">
                     <p><b>{{ video.video_locales.find(locale => locale.locale_id === localeStore.userLocale)?.name || video.video_locales.find(locale => locale.locale_id === 'en').name }}</b></p>
                 </div>
             </router-link>

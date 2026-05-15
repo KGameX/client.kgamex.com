@@ -61,3 +61,61 @@
 #applications {
     background-image: linear-gradient(135deg, #c7bb0e, #c43b3b, #b530b8);
 }
+
+@media (max-width: 1000px) {
+    .main-home {
+        justify-content: center;
+        align-items: flex-start;
+        height: 600px;
+        background-size: auto 70%, 100% 100%;
+        background-position: bottom -10px center, center;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    .text-image {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-image:nth-of-type(odd) {
+        flex-direction: column;
+    }
+
+    .text-image-text {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-image-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .text-image-image img.pose {
+        position: absolute;
+        top: 7.5%;
+        left: 0;
+        width: 100%;
+        height: 95%;
+    }
+
+    .text-image-image img.application {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        width: 100%;
+        height: 60%;
+    }
+
+    #poses {
+        background-image: linear-gradient(135deg, #32ffb1, #296dff, #fa35fd);
+    }
+
+    #applications {
+        background-image: linear-gradient(135deg, #c7bb0e, #c43b3b, #b530b8);
+    }
+}

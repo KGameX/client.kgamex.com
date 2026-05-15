@@ -43,26 +43,26 @@
 }
 
 #image-algodoo {
-    background-image: url("/images/kgamex-poses/desktop.svg"), linear-gradient(135deg, #40a18a, #56b00c, #c7bb0e);
+    background-image: url(/images/kgamex-poses/desktop.svg), linear-gradient(135deg, #40a18a, #56b00c, #c7bb0e);
     background-position: bottom -5px center, center;
 }
 
 #image-beat-saber {
-    background-image: url("/images/kgamex-poses/beat-saber.svg"), linear-gradient(135deg, #d91041, #b22ba8, #5475da);
+    background-image: url(/images/kgamex-poses/beat-saber.svg), linear-gradient(135deg, #d91041, #b22ba8, #5475da);
     background-position: bottom -5px center, center;
 }
 
 #image-mario-kart {
-    background-image: url("/images/kgamex-poses/mario-kart.svg"), linear-gradient(135deg, #32ffb1, #296dff, #fa35fd);
+    background-image: url(/images/kgamex-poses/mario-kart.svg), linear-gradient(135deg, #32ffb1, #296dff, #fa35fd);
     background-position: bottom -5px right -20px, center;
 }
 
 #image-geometry-dash {
-    background-image: url("/images/kgamex-poses/geometry-dash.svg"), linear-gradient(135deg, #00ffff, #0000ff);
+    background-image: url(/images/kgamex-poses/geometry-dash.svg), linear-gradient(135deg, #00ffff, #0000ff);
     background-position: bottom -5px right -20px, center;
 }
 
-.main-activities {
+.main-activity {
     color: white;
     display: flex;
     align-items: center;
@@ -71,4 +71,40 @@
     background-size: auto 125%, 100% 100%;
     background-position: bottom -120px right 15%, center;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1000px) {
+    .swiper {
+        flex-direction: column;
+        margin: 7.5px;
+        width: 100%;
+        max-width: calc(100% - 15px);
+        gap: 7.5px;
+    }
+
+    .swiper-card {
+        width: 100%;
+    }
+
+    .swiper-image {
+        border-radius: 5px;
+        width: 100%;
+        height: 300px;
+        background-size: auto 300px, auto;
+        background-repeat: no-repeat;
+    }
+
+    #image-mario-kart, #image-geometry-dash {
+        background-position: bottom -5px center, center;
+    }
+
+    .main-activity {
+        justify-content: center;
+        align-items: flex-start;
+        height: 300px;
+        box-sizing: border-box;
+        background-size: auto 100%, 100% 100%;
+        background-position: bottom -75px center, center;
+        background-repeat: no-repeat;
+    }
 }

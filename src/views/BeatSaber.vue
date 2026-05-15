@@ -1,6 +1,6 @@
 <template>
     <div class="tab">
-        <section class="main-activities" id="beat-saber">
+        <section class="main-activity" id="beat-saber">
             <div>
                 <h2>Beat Saber</h2>
             </div>
@@ -57,18 +57,18 @@
                     <div>
                         <h6>{{ score.leaderboard.song.name }} <span class="footnote">{{ score.leaderboard.song.subName }}</span></h6>
                         <p>{{ score.leaderboard.song.author }} <span class="footnote">{{ score.leaderboard.song.mapper }}</span></p>
-                        <p v-if="score.leaderboard.difficulty.stars">{{ score.leaderboard.difficulty.stars.toFixed(2) }} ★</p>
+                        <p>{{ parseMode(score.leaderboard.difficulty.mode) + ' ' + parseDifficulty(score.leaderboard.difficulty.value) }}<span v-if="score.leaderboard.difficulty.stars">, {{ score.leaderboard.difficulty.stars?.toFixed(2) }} ★</span></p>
                     </div>
 
                     <div class="score-data">
                         <div>
                             <p>{{ new Date(score.timepost * 1000).toLocaleDateString() }}</p>
-                            <p v-if="tab === 'attempts'">{{ t(`activities.beat-saber.score.attempt-status.${score.endType}`, { time: Math.floor(score.time / 60) + ":" + (score.time % 60).toFixed(0).padStart(2, '0') }) }}</p>
+                            <p v-if="tab === 'attempts'">{{ t(`activities.beat-saber.score.attempt-status.${score.endType}`, { time: Math.floor(score.time / 60) + ":" + (score.time % 60).toFixed(0).padStart(2, '0'), startTime: Math.floor(score.startTime / 60) + ":" + (score.startTime % 60).toFixed(0).padStart(2, '0') }) }}</p>
                         </div>
 
                         <div>
                             <p class="flex">
-                                <span class="block pp" :title="score.leaderboard.difficulty.stars && score.weight !== 0 ? t('activities.beat-saber.score.weighted-pp', { value: (score.pp * score.weight).toFixed(2) }) : ''">{{ !score.leaderboard.difficulty.stars ? 'Unranked' : score.pp.toFixed(2) + ' pp' }}</span>
+                                <span class="block pp" :title="score.leaderboard.difficulty.stars && score.weight ? t('activities.beat-saber.score.weighted-pp', { value: (score.pp * score.weight).toFixed(2) }) : ''">{{ !score.leaderboard.difficulty.stars ? t('activities.beat-saber.score.unranked') : score.pp.toFixed(2) + ' pp' }}</span>
                                 <span class="block score">{{ score.baseScore.toLocaleString() }}</span>
                             </p>
 
@@ -141,5 +141,39 @@ function parseMistakes(score) {
     }
     
     return mistakes.join(', ')
+}
+
+function parseDifficulty(difficulty) {
+    switch (difficulty) {
+        case 1:
+            return 'Easy'
+        case 3:
+            return 'Normal'
+        case 5:
+            return 'Hard'
+        case 7:
+            return 'Expert'
+        case 9:
+            return 'Expert+'
+        default:
+            return difficulty
+    }
+}
+
+function parseMode(mode) {
+    switch (mode) {
+        case 1:
+            return 'Standard'
+        case 2:
+            return 'One Saber'
+        case 3:
+            return 'No Arrows'
+        case 4:
+            return '90°'
+        case 5:
+            return '360°'
+        default:
+            return mode
+    }
 }
 </script>

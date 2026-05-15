@@ -36,6 +36,17 @@
 }
 
 @font-face {
-    font-family: Ubuntu Mono;
+    font-family: montserrat;
+    src: url(/fonts/montserrat.ttf);
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(/fonts/montserrat-italic.ttf);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: ubuntu mono;
     src: url(/fonts/ubuntu-mono.ttf);
 }

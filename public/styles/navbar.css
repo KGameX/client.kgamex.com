@@ -35,12 +35,17 @@
     transition: background-color 0.25s ease-in-out;
 }
 
-.navbar div.dropdown-toggle:hover {
+.navbar div.menu {
+    height: fit-content;
+    flex-direction: column;
+}
+
+.navbar div.submenu:hover, .navbar div.dropdown-toggle:hover {
     background-color: var(--percent-90);
 }
 
-.navbar div.submenu:hover {
-    background-color: var(--percent-90);
+.navbar div.home-mobile, .navbar div.hidden {
+    display: none;
 }
 
 .navbar div.home {
@@ -125,4 +130,114 @@
 .cover-box.hidden {
     background-color: rgba(0, 0, 0, 0);
     visibility: hidden;
+}
+
+@media (max-width: 1000px) {
+    .navbar {
+        width: 100%;
+        height: 315px;
+        border-radius: 0 0 5px 5px;
+        top: -240px;
+        flex-direction: column;
+    }
+
+    .navbar div.menu {
+        flex-direction: row-reverse;
+        order: 1;
+        height: 75px;
+        justify-content: space-between;
+        transition: height 1s cubic-bezier(1, 0, 0, 1);
+    }
+
+    .navbar div.submenu:hover, .navbar div.dropdown-toggle:hover {
+        background-color: var(--section-color);
+    }
+
+    .navbar div.hidden {
+        display: block;
+        width: 40px;
+    }
+
+    .navbar div.dropdown-toggle {
+        width: 40px;
+        height: 100%;
+    }
+
+    .navbar div.dropdown-toggle img, .navbar .submenu .icon img {
+        width: 30px;
+    }
+
+    .navbar div.home-mobile {
+        display: block;
+        background-image: url('/images/main-gradient.jpg');
+        background-size: 100% 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 0;
+        transition: inherit;
+    }
+
+    .navbar div.home {
+        height: 75px;
+        width: 75px; 
+        background-size: 150px 150px;
+        transition: inherit;
+    }
+
+    .navbar div.home-mobile img {
+        height: 200%;
+        transition: inherit;
+    }
+
+    .navbar div.home:hover img, .navbar div.home-mobile:hover img {
+        opacity: 1;
+    }
+
+    .navbar .submenu {
+        width: 200px;
+        height: 40px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    .navbar .submenu .icon, .navbar .submenu .text {
+        width: fit-content;
+    }
+
+    .navbar.expanded {
+        top: 0;
+        height: 440px;
+        width: 100%;
+    }
+
+    .navbar.expanded .menu {
+        height: 0;
+    }
+    
+    .navbar.expanded div.home-mobile {
+        height: 200px;
+    }
+
+    .navbar.expanded div.home {
+        height: 75px;
+        width: 75px; 
+        background-size: 150px 150px;
+    }
+
+    .navbar.expanded div.home-mobile img {
+        height: 100%;
+    }
+
+    .navbar.expanded div.dropdown-toggle img {
+        rotate: 0deg;
+    }
+
+    .navbar.expanded .submenu .icon, .navbar.expanded .submenu .text {
+        width: fit-content;
+    }
+
+    .navbar .bottom {
+        margin-top: 0;
+    }
 }
