@@ -46,7 +46,7 @@
                     </section>
 
                     <section class="no-padding flex">
-                        <button class="button" :disabled="questionCommentBody.length == 0 || questionCommentStore.submitted" @click="questionCommentStore.createComment({ question_id: questionStore.question.id, body: questionCommentBody }); questionCommentBody = ''">{{ t('buttons.submit') }}</button>
+                        <button class="button" :disabled="questionCommentBody.length == 0 || questionCommentStore.submitted" @click="questionCommentStore.createComment({ question_id: questionStore.question.id, body: questionCommentBody })">{{ t('buttons.submit') }}</button>
                     </section>
                 </div>
 
@@ -78,7 +78,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import useQuestionStore from '@/stores/question'
@@ -99,4 +99,10 @@ const confirmDelete = ref(false)
 
 questionStore.fetchQuestionById(route.params.id)
 questionCommentStore.fetchCommentsByQuestionId({ questionId: route.params.id })
+
+watch(questionCommentStore, (newValue) => {
+    if (!newValue.submitted) {
+        questionCommentBody.value = ''
+    }
+})
 </script>

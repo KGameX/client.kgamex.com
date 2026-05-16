@@ -73,4 +73,11 @@ const router = createRouter({
     routes: routes,
 })
 
+router.beforeEach((to, from, next) => {
+    setTimeout(() => {
+        window.scroll(0, 0)
+    }, 250)    
+    next()
+})
+
 export default router

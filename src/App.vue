@@ -203,7 +203,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import LanguageSelectWindow from './components/LanguageSelectWindow.vue'
 import useUserStore from '@/stores/user'
@@ -226,10 +226,30 @@ locale.value = localeStore.userLocale
 const theme = ref(document.cookie.split(';').find(cookie => cookie.trim().startsWith('theme='))?.split('=')[1] || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') || 'light')
 document.documentElement.setAttribute('data-theme', theme.value)
 
+function setListeners() {
+    const navbar = document.getElementsByClassName('navbar')[0]
+    const submenus = document.getElementsByClassName('submenu')
+    const coverBox = document.getElementsByClassName('cover-box')[0]
+
+    setTimeout(() => {
+        Array.from(submenus).slice(0, -2).forEach((submenu) => {
+            submenu.addEventListener('click', () => {
+                if (navbar.classList.contains('expanded')) {
+                    navbar.classList.remove('expanded')
+                    coverBox.classList.add('hidden')
+                }
+            })
+        })
+    }, 100)
+}
+
+watch(userStore, () => {
+    setListeners()
+})
+
 onMounted(() => {
     const navbar = document.getElementsByClassName('navbar')[0]
     const dropdownToggle = document.getElementsByClassName('dropdown-toggle')[0]
-    const submenus = document.getElementsByClassName('submenu')
     const homeButton = document.getElementsByClassName('home')[0]
     const homeButtonMobile = document.getElementsByClassName('home-mobile')[0]
     const changeLanguageButton = document.getElementById('change-language-button')
@@ -260,15 +280,6 @@ onMounted(() => {
         }
     })
 
-    Array.from(submenus).slice(0, -2).forEach((submenu) => {
-        submenu.addEventListener('click', () => {
-            if (navbar.classList.contains('expanded')) {
-                navbar.classList.remove('expanded')
-                coverBox.classList.add('hidden')
-            }
-        })
-    })
-
     changeLanguageButton.addEventListener('click', () => {
         languageSelectWindowVisible.value = !languageSelectWindowVisible.value
     })
@@ -283,6 +294,8 @@ onMounted(() => {
         document.cookie = `theme=${theme.value};path=/;max-age=7776000`
         document.documentElement.setAttribute('data-theme', theme.value)
     })
+
+    setListeners()
 
     coverBox.addEventListener('click', () => {
         navbar.classList.remove('expanded')
