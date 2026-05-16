@@ -194,7 +194,6 @@
                 <li><a href="https://discord.com/invite/uDsPdw7A5r" target="_blank"><img src="/images/socials-symbolic/discord.svg" height="30" id="icon"></a></li>
                 <li><a href="https://youtube.com/@kgamex_vk" target="_blank"><img src="/images/socials-symbolic/youtube.svg" height="30" id="icon"></a></li>
                 <li><a href="https://github.com/KGameX/client.kgamex.com" target="_blank"><img src="/images/socials-symbolic/github.svg" height="30" id="icon"></a></li>
-                <li><a href="https://facebook.com/KGameX.VK" target="_blank"><img src="/images/socials-symbolic/facebook.svg" height="30" id="icon"></a></li>
                 <li><a href="https://instagram.com/KGameX.VK" target="_blank"><img src="/images/socials-symbolic/instagram.svg" height="30" id="icon"></a></li>
                 <li><a href="https://x.com/KGameX_VK" target="_blank"><img src="/images/socials-symbolic/x.svg" height="30" id="icon"></a></li>
             </ul>
