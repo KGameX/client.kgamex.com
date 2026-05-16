@@ -33,7 +33,7 @@ import { useI18n } from 'vue-i18n'
 import { usePageTitle } from '@/composables/page_title'
 
 const { t } = useI18n()
-usePageTitle('KGΛMΞX - Live it, for Real.', true)
+usePageTitle('KGΛMΞX - Live it, for Real.', true, true)
 
 const poses = [
     '/images/kgamex-poses/beat-saber.svg',
